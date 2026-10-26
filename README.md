@@ -1,16 +1,20 @@
 # Penguin for Lunar
 
-## New preview: 1.9.28-preview.4
+## New preview: 1.9.28-preview.5
 
-**[Download the updated Windows preview](https://github.com/eksimpkins/penguin/releases/download/v1.9.28-preview.4/Penguin-Lunar-1.9.28-preview.4.zip)** · **[Release notes and source](https://github.com/eksimpkins/penguin/releases/tag/v1.9.28-preview.4)**
+**[Download the updated Windows preview](https://github.com/penguinmodowner/penguin/releases/download/v1.9.28-preview.5/Penguin-Lunar-1.9.28-preview.5.zip)** · **[Release notes and source](https://github.com/penguinmodowner/penguin/releases/tag/v1.9.28-preview.5)**
 
-Dump clues and Collect matching now shift-click each scroll stack, merge compatible stacks, and pace transfers for connection lag. Completed scrolls stay protected. Sort clues remains a separate chest-sorting action.
+This update fixes clue scrolls being dumped after completion and valid unfinished tasks being skipped. It recognizes the full **“COMPLETE! Right-click to claim rewards!”** footer, completed checkmarks and wrapped task text. Unfinished Lose, Join, Attack, Discover, Level up, Fail, Reveal and Receive tasks are now recognized too.
 
-Prepare Lunar now offers **MrMexican 1.3.2** and optional **CosmicTextures 1.2**, both initially unchecked. Select MrMexican to enable the Include CosmicTextures option. With Textures included, MrMexican's overlapping texture packs and automatic Ground Zero/Prison Break pack switching are disabled.
+After **Collect matching** finishes, a matching unfinished scroll stack in **hotbar slot 2** moves into the **first free upper-inventory slot**. The reference in slot 1 stays put. If there is no free upper slot, slot 2 stays put; stopping collection skips the final move. Completed scrolls and unrelated items are left alone.
+
+Dump clues and Collect matching use normal shift-clicks, merge compatible stacks, and pace transfers for connection lag. Sort clues remains a separate chest-sorting action.
+
+Prepare Lunar offers **MrMexican 1.3.2** and optional **CosmicTextures 1.2**, both initially unchecked. Select MrMexican to enable the Include CosmicTextures option. With Textures included, MrMexican's overlapping texture packs and automatic Ground Zero/Prison Break pack switching are disabled.
 
 MrMexican setup backs up old CosmicUtilities, CosmicPings and Penguin copies. CosmicTextures is removed only when omitted from that setup. Lunar's other mods remain in place. Fully close Minecraft and Lunar, including the tray icon, before installing companion changes. Restart Minecraft to replace already-loaded Penguin code.
 
-This prerelease also contains clue matching/dumping, the white-concrete Vault preset, dynamic friend gangs and Raid Watch. **564 automated tests passed; one was skipped.** New features still need in-game checks. Extract the entire Windows ZIP and use its README for current instructions. Source/test-fixture instructions and checksums are attached to the release.
+This remains a prerelease and also contains the white-concrete Vault preset, dynamic friend gangs and Raid Watch. **601 automated tests passed across 63 suites; one filesystem-link test was skipped.** The user confirmed the clue-scroll update works after loading preview 5. That check does not validate every inventory edge case, companion combination or other preview feature. Extract the entire Windows ZIP and use its README for current instructions. Source/test-fixture instructions and checksums are attached to the release.
 
 ## Previous stable version: 1.9.27
 
@@ -20,11 +24,11 @@ Penguin is a Windows x64 controller and mod for **Lunar Client, Minecraft 1.21.1
 
 ## Download
 
-**[Download Penguin 1.9.27 for Windows](https://github.com/eksimpkins/penguin/releases/download/v1.9.27/Penguin-Lunar-1.9.27-Windows.zip)**
+**[Download Penguin 1.9.27 for Windows](https://github.com/penguinmodowner/penguin/releases/download/v1.9.27/Penguin-Lunar-1.9.27-Windows.zip)**
 
 Extract the entire ZIP and keep Penguin.exe, app and runtime together. Java is included.
 
-For developers, **[Penguin-Lunar-1.9.27-Source.zip](https://github.com/eksimpkins/penguin/releases/download/v1.9.27/Penguin-Lunar-1.9.27-Source.zip)** contains the buildable Penguin source and tests. GitHub's automatic **Source code** downloads contain this documentation repository, not the application source or ready-to-run program. **[SHA256SUMS.txt](https://github.com/eksimpkins/penguin/releases/download/v1.9.27/SHA256SUMS.txt)** lists checksums for both release ZIPs.
+For developers, **[Penguin-Lunar-1.9.27-Source.zip](https://github.com/penguinmodowner/penguin/releases/download/v1.9.27/Penguin-Lunar-1.9.27-Source.zip)** contains the buildable Penguin source and tests. GitHub's automatic **Source code** downloads contain this documentation repository, not the application source or ready-to-run program. **[SHA256SUMS.txt](https://github.com/penguinmodowner/penguin/releases/download/v1.9.27/SHA256SUMS.txt)** lists checksums for both release ZIPs.
 
 **1.9.27 includes a CosmicUtilities mining correction.** Inherited Utilities overrides could prevent normal left-click mining or switching mining targets. The new **1.5 experimental-r3 compatibility build for Minecraft 1.21.11** restores Minecraft's normal block-start, target-change and right-click-while-mining decisions, and keeps Peaceful Mining within normal reach. The G Focus and saved-settings fixes remain included. Prepare Lunar's Fabric Loader detection fix and Penguin's existing mining-cycle behavior are preserved.
 
