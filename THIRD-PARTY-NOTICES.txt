@@ -1,34 +1,45 @@
 PENGUIN - THIRD-PARTY NOTICES
 
-COSMIC UTILITIES
-Original author: Minecoin
-Original project: https://modrinth.com/mod/cosmicutilities
-Fabric mod ID: prisonsutil
-Original version: 1.5
+MRMEXICAN - OPTIONAL OFFICIAL DOWNLOAD
+Project: https://modrinth.com/mod/mrmexican
+Author listed in the reviewed Fabric metadata: MrPickle96
+Fabric mod ID: mrmexican
+Official release: 1.3.2 (Modrinth version K8iQ9P4e)
 Original license metadata: All-Rights-Reserved
 
-Included compatibility build:
-cosmicutilities-1.5-local-compat-1.21.11-experimental-r3.jar
-SHA-256: 1d97cca7bb17ecdfb09e75f7d60f075cf5adea84c5dc352c2e40159441727a91
+Downloaded only when selected in Prepare Lunar; not bundled with Penguin:
+https://cdn.modrinth.com/data/8iyTiOpg/versions/K8iQ9P4e/MrMexican-1.3.2.jar
+Size: 6592106 bytes
+SHA-512:
+d2a17438f9643afb7159a8c69016a7be7a8f172e75f9a2dff3cefc72c7eba11033366c1f30aa6427a73e70133cf4f213497cf86c23d99708a9aed7aa4435ceea
 
-This is an unofficial Minecraft 1.21.11 compatibility rebuild of Minecoin's
-CosmicUtilities 1.5, not an official Minecoin release. Original attribution,
-assets and All Rights Reserved metadata are retained. Compatibility changes
-include Minecraft rendering/API adaptations, the offscreen G Focus marker fix,
-and a fix for errors while reloading saved cooldown settings. Revision 3 restores
-Minecraft's normal mining and item-use checks and limits Peaceful Mining block
-targeting to the player's normal block reach.
+Penguin does not modify this official JAR. It backs up superseded Cosmic mods
+and old Penguin mod copies, and changes local settings to disable automatic cosmic-updater,
+automatic Papa Ping authentication, and Peaceful Mining. The supplied release
+includes its own dependency and asset notices. Those terms remain applicable.
+Static review is not a guarantee of safety or an endorsement by the mod author.
 
 Penguin's MIT license applies to Penguin code only. It does not relicense
-CosmicUtilities, its assets or its compatibility build, and grants no additional
-rights to those materials. The original rights holder retains their rights.
+MrMexican, its assets or dependencies, or grant rights to those materials.
+The original rights holders retain their rights. The earlier CosmicUtilities
+compatibility build is no longer included in this launcher distribution.
 
-Prepare Lunar installs this build only when CosmicUtilities is selected. A local
-compatible Minecoin JAR may be selected instead. The bundled build and any local
-override remain subject to their respective third-party terms.
+COSMICTEXTURES - OPTIONAL OFFICIAL DOWNLOAD
+Author: Minecoin
+Project: https://modrinth.com/mod/cosmictextures
+Fabric mod ID: cosmic-textures
+Official release: 1.2 (Modrinth version qJSPhlis)
+Original license metadata: CC0-1.0
+Downloaded only when included alongside MrMexican; not bundled with Penguin:
+https://cdn.modrinth.com/data/iBJjxFaP/versions/qJSPhlis/cosmic-textures-1.2.jar
+Size: 1756519 bytes
+SHA-512:
+2cedce9393df67677a1e225dd2a1f34ea25db80b598156e08655162643cf26a4c5f5c1c64f166b79a8eec111084843ae3c90d5cadc738ac9dbd0e5f1f05d5504
+Penguin leaves this JAR unchanged and turns off MrMexican's overlapping texture
+packs when it is included. CosmicTextures remains under its own CC0-1.0 terms;
+Penguin's MIT license applies to Penguin code.
 
-OTHER COMPANION MODS AND RUNTIME COMPONENTS
-CosmicPings, CosmicTextures and required dependencies are obtained separately
-from compatible official Modrinth releases when selected or required. Their
-own authorship and license terms apply. Java runtime legal notices and notices
-included within other packaged dependencies remain applicable.
+OTHER RUNTIME COMPONENTS
+Fabric API is reused or downloaded separately from official Modrinth releases
+when needed. Its own authorship and license terms apply. Java runtime legal
+notices and notices within other packaged dependencies remain applicable.

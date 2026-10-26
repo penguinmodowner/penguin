@@ -1,5 +1,21 @@
 # Penguin for Lunar
 
+## New preview: 1.9.28-preview.4
+
+**[Download the updated Windows preview](https://github.com/eksimpkins/penguin/releases/download/v1.9.28-preview.4/Penguin-Lunar-1.9.28-preview.4.zip)** · **[Release notes and source](https://github.com/eksimpkins/penguin/releases/tag/v1.9.28-preview.4)**
+
+Dump clues and Collect matching now shift-click each scroll stack, merge compatible stacks, and pace transfers for connection lag. Completed scrolls stay protected. Sort clues remains a separate chest-sorting action.
+
+Prepare Lunar now offers **MrMexican 1.3.2** and optional **CosmicTextures 1.2**, both initially unchecked. Select MrMexican to enable the Include CosmicTextures option. With Textures included, MrMexican's overlapping texture packs and automatic Ground Zero/Prison Break pack switching are disabled.
+
+MrMexican setup backs up old CosmicUtilities, CosmicPings and Penguin copies. CosmicTextures is removed only when omitted from that setup. Lunar's other mods remain in place. Fully close Minecraft and Lunar, including the tray icon, before installing companion changes. Restart Minecraft to replace already-loaded Penguin code.
+
+This prerelease also contains clue matching/dumping, the white-concrete Vault preset, dynamic friend gangs and Raid Watch. **564 automated tests passed; one was skipped.** New features still need in-game checks. Extract the entire Windows ZIP and use its README for current instructions. Source/test-fixture instructions and checksums are attached to the release.
+
+## Previous stable version: 1.9.27
+
+The guide below describes the previous stable version and its old companion installer. For the new MrMexican setup, use the preview instructions above.
+
 Penguin is a Windows x64 controller and mod for **Lunar Client, Minecraft 1.21.11, Fabric and Fabric API**. Load or stop it while Minecraft stays open.
 
 ## Download
