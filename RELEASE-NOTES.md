@@ -1,31 +1,45 @@
-# Penguin 1.9.28-preview.5 — clue-scroll fixes and inventory cleanup
+# Penguin 1.9.28 — a clearer menu and easier setup
 
-Download **[Penguin-Lunar-1.9.28-preview.5.zip](https://github.com/penguinmodowner/penguin/releases/download/v1.9.28-preview.5/Penguin-Lunar-1.9.28-preview.5.zip)** for Windows x64. Extract the entire ZIP and keep Penguin.exe, app and runtime together. Java is included. Requires Lunar Fabric 1.21.11 and Fabric API.
+**[Download Penguin 1.9.28 for Windows](https://github.com/penguinmodowner/penguin/releases/download/v1.9.28/Penguin-Lunar-1.9.28.zip)**
 
-This is a **prerelease**. Restart Minecraft before loading it, and use the same Penguin build in game windows sharing settings.
+Requires Windows x64 and Lunar Fabric **1.21.11** with Fabric API. Extract the entire ZIP; Java is included. Existing settings are preserved. **Restart Minecraft before loading this update**, and use the same Penguin version in windows sharing settings.
 
-## Fixed clue eligibility
+## A menu that's easier to learn
 
-- **Dump clues** and **Collect matching** now recognize the combined **“COMPLETE! Right-click to claim rewards!”** footer from the reported Elite and Uncommon scrolls. Completed rewards stay out of transfers even when an older task remains or strikethrough formatting is missing.
-- Completed checkmarks after bullets or task text are protected. Wrapped lines cannot make completed or unknown tasks appear unfinished again; valid unfinished wrapped tasks retain their full requirements.
-- Unfinished **Lose, Join, Attack, Discover, Level up, Fail, Reveal and Receive** tasks are now recognized, fixing skipped valid scrolls.
+- A new **Start guide** introduces the controls and links to common tasks.
+- Features are organized into **Mining, Combat, Visuals, Clues and Alerts**, with **All** and global search.
+- Gen Mining now has **Cycle, Verify, Sell, Alerts and Escape** sections. Block Tracers has **Blocks, Display and Presets**.
+- Settings separates **Display, Controls and Help**. Friends, gang watching, profiles and block tools have clearer actions and explanations.
+- The menu still remembers your page, search and scroll position when reopened.
+- The launcher separates first-time **Prepare → Launch → Load** from everyday game controls. It refreshes the game list automatically and requires an explicit choice when several games are open. Opening it alone no longer edits Lunar settings; **Prepare Lunar** does.
 
-## Collect matching cleanup
+## Clue-scroll fixes
 
-- After collection finishes successfully, a matching unfinished scroll stack in **hotbar slot 2** moves into the **first free upper-inventory slot**. The reference in **slot 1** remains in place.
-- If the upper inventory is full, slot 2 stays put. Completed scrolls, unrelated items and nonmatching stacks are not moved. Stopping collection cancels this final move too.
+- Completed scrolls are protected from Dump and Collect, including the combined **“COMPLETE! Right-click to claim rewards!”** footer, checkmarks and wrapped task text.
+- More unfinished task types are recognized, fixing valid clues being skipped.
+- Dump and Collect shift-click one stack at a time, merge compatible stacks and pace transfers for connection lag. Sort remains a separate chest action.
+- Collect uses **hotbar slot 1** as its reference. On successful completion, a matching unfinished clue in **slot 2** moves to the first empty upper-inventory slot. Completed, unrelated or nonmatching items are left alone; no move is made if there is no space or collection is cancelled.
+- Similar matching groups market-price amounts and normal/deepslate variants of the same ore while keeping lapis and redstone separate.
 
-## Included from preview 4
+## Friends, waypoints and blocks
 
-- Dump and Collect shift-click one scroll stack at a time, support compatible merging and pace transfers for connection lag. Exact server rollbacks get up to two slower retries; unexpected inventory changes stop further clicks. Sort clues still rearranges items within the chest.
-- **Prepare Lunar:** optional **MrMexican 1.3.2** and **Include CosmicTextures 1.2** are both unchecked by default. Setup downloads the pinned official releases, backs up superseded Cosmic/Penguin copies and preserves unrelated Lunar mods. Including Textures disables MrMexican's overlapping texture packs and automatic Ground Zero/Prison Break pack switching. MrMexican automatic updates, automatic Papa Ping and Peaceful Mining are disabled by setup.
-- Fully close Minecraft and Lunar, including its tray icon, before installing companion changes. Updating Penguin alone does not update companions. Backups are stored under the profile's `penguin-mod-backups` folder.
-- The white-concrete Vault preset, dynamic friend gangs and Raid Watch with an optional local Discord-bot relay remain included. See the bundled README for setup and limits. No live Discord notification was sent during development.
+- **Lunar Waypoint Groups:** show or hide only a selected group's waypoints, with an optional configurable key. Other groups and ungrouped waypoints stay unchanged. Lunar saves the visibility changes.
+- **Saved gang friends:** recognized members of watched gangs are added permanently to Friends. Leaving a gang or stopping its watch does not remove them. Individual OFF switches stay respected across shared settings.
+- Live gang detection now recognizes the server's unquoted team tags as well as supported quoted tags.
+- The **Vault** block preset now selects **white concrete**. Ground Zero and individual block colors remain available.
+
+## Companion setup and alerts
+
+Prepare Lunar offers **MrMexican 1.3.2** and optional **CosmicTextures 1.2**, both unchecked by default. It downloads pinned official files, reviews changes before installation, backs up superseded CosmicUtilities/CosmicPings/Penguin copies and preserves unrelated Lunar mods. CosmicTextures is kept or installed when included. The older Utilities port is no longer bundled.
+
+Setup disables MrMexican's updater, automatic Papa Ping and Peaceful Mining. Including CosmicTextures disables overlapping MrMexican texture packs. Fully close Minecraft and Lunar, including its tray icon, before changing companions; loading this Penguin update alone does not replace them.
+
+**Alerts** brings together Message Alerts, Mining Alerts and Raid Watch. Message Alerts remains independent of Gen Mining. Raid Watch supports local cell monitoring and an optional relay to an existing local PenguinTracker Discord bot; no bot token is needed by Penguin.
 
 ## Validation and source
 
-**601 automated tests passed across 63 suites; one filesystem-link test was skipped.** New regression checks cover the reported completed tooltips, missing task verbs, wrapped tasks, transfer selection and the final hotbar move. The user confirmed the clue-scroll update works after loading preview 5. This does not validate every inventory edge case, companion combination or other preview feature.
+**649 automated tests passed; one filesystem-link test was skipped.** In-game checks confirmed the new menu, clue-scroll fixes and vaults-only waypoint toggling. Gang detection passed a read-only check against live tags; the resulting friend-list/nametag behavior still awaits final user confirmation. Live Raid Watch relay delivery and every optional companion combination have not been confirmed.
 
-The attached **Penguin-Lunar-1.9.28-preview.5-Source.zip** contains Penguin source and tests. Its `SOURCE-BUILD.txt` explains the optional mod fixtures needed by integration tests. GitHub's automatic Source code downloads contain this documentation repository. **SHA256SUMS.txt** covers both release ZIPs.
+The attached **Penguin-Lunar-1.9.28-Source.zip** contains the application source and tests, with test-fixture instructions in `SOURCE-BUILD.txt`. GitHub's automatic Source code downloads contain this documentation repository. **SHA256SUMS.txt** covers both release ZIPs.
 
-Companion mods retain their authorship and licenses; Penguin's MIT license applies to Penguin code. See `THIRD-PARTY-NOTICES.txt`. Static review is not a guarantee of safety. Manually creating a `/papa` group can still authenticate your Minecraft identity with its external service.
+See `README.txt` for full setup and `THIRD-PARTY-NOTICES.txt` for companion authorship and terms. Penguin's MIT license applies to Penguin code only. Manually creating a `/papa` group can still authenticate your Minecraft identity with its external service.

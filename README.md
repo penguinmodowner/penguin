@@ -1,148 +1,96 @@
 # Penguin for Lunar
 
-## New preview: 1.9.28-preview.5
+**Penguin 1.9.28** brings a clearer menu, a first-use guide and simpler launcher controls, along with clue-scroll fixes, Lunar waypoint-group controls and saved gang friends.
 
-**[Download the updated Windows preview](https://github.com/penguinmodowner/penguin/releases/download/v1.9.28-preview.5/Penguin-Lunar-1.9.28-preview.5.zip)** · **[Release notes and source](https://github.com/penguinmodowner/penguin/releases/tag/v1.9.28-preview.5)**
+**[Download Penguin 1.9.28 for Windows](https://github.com/penguinmodowner/penguin/releases/download/v1.9.28/Penguin-Lunar-1.9.28.zip)** · **[Release notes and downloads](https://github.com/penguinmodowner/penguin/releases/tag/v1.9.28)**
 
-This update fixes clue scrolls being dumped after completion and valid unfinished tasks being skipped. It recognizes the full **“COMPLETE! Right-click to claim rewards!”** footer, completed checkmarks and wrapped task text. Unfinished Lose, Join, Attack, Discover, Level up, Fail, Reveal and Receive tasks are now recognized too.
+Requires **Windows x64, Lunar Client, Minecraft 1.21.11 with Fabric, and Fabric API**. Java is included in the download. Existing Penguin preferences are preserved.
 
-After **Collect matching** finishes, a matching unfinished scroll stack in **hotbar slot 2** moves into the **first free upper-inventory slot**. The reference in slot 1 stays put. If there is no free upper slot, slot 2 stays put; stopping collection skips the final move. Completed scrolls and unrelated items are left alone.
+## Get started
 
-Dump clues and Collect matching use normal shift-clicks, merge compatible stacks, and pace transfers for connection lag. Sort clues remains a separate chest-sorting action.
+1. Extract the **entire ZIP**. Keep `Penguin.exe`, `app` and `runtime` together.
+2. First time only: fully close Minecraft and Lunar, including Lunar's tray icon. Open `Penguin.exe` and choose **Prepare Lunar** to enable Lunar's attach setting. Optional companion mods start unchecked.
+3. Launch Lunar **Fabric 1.21.11** and wait for Minecraft's main menu.
+4. Select the game in Penguin and choose **Load Penguin**. Keep Minecraft visible while resources reload. If you have several games open, select the intended one explicitly.
+5. Press **K** in a world, or use **Open menu** in the launcher. **Start** explains the controls and links to common tasks.
 
-Prepare Lunar offers **MrMexican 1.3.2** and optional **CosmicTextures 1.2**, both initially unchecked. Select MrMexican to enable the Include CosmicTextures option. With Textures included, MrMexican's overlapping texture packs and automatic Ground Zero/Prison Break pack switching are disabled.
+For later sessions, start at step 3. **Restart Minecraft before loading a newer Penguin version.** Opening Penguin alone does not change Lunar settings; Prepare Lunar does. Do not also install a Penguin JAR in the mods folder.
 
-MrMexican setup backs up old CosmicUtilities, CosmicPings and Penguin copies. CosmicTextures is removed only when omitted from that setup. Lunar's other mods remain in place. Fully close Minecraft and Lunar, including the tray icon, before installing companion changes. Restart Minecraft to replace already-loaded Penguin code.
+## Find your features
 
-This remains a prerelease and also contains the white-concrete Vault preset, dynamic friend gangs and Raid Watch. **601 automated tests passed across 63 suites; one filesystem-link test was skipped.** The user confirmed the clue-scroll update works after loading preview 5. That check does not validate every inventory edge case, companion combination or other preview feature. Extract the entire Windows ZIP and use its README for current instructions. Source/test-fixture instructions and checksums are attached to the release.
+| Tab | What's inside |
+| --- | --- |
+| **Start** | Quick guide, friends, profiles, menu size and shortcut help |
+| **Mining** | Gen Mining and Block Tracers, as separate modules |
+| **Combat** | Left Clicker, Right Clicker and Aim Assist |
+| **Visuals** | Nametags, Friend Overlay, Stone View, No Debuff, Constant FOV and Waypoint Groups |
+| **Clues** | Clue Scrolls guide, matching and transfer options |
+| **Alerts** | Message Alerts, Mining Alerts and Raid Watch |
+| **All** | Every feature; search also searches every category |
 
-## Previous stable version: 1.9.27
+Select a feature to open its settings. Switches turn things on or off; buttons open pages or perform their named action. Gen Mining has separate controls instead of one master switch. Closing the menu keeps features running and remembers your page and scroll position for that game session.
 
-The guide below describes the previous stable version and its old companion installer. For the new MrMexican setup, use the preview instructions above.
+**Settings** has three pages: **Display** for menu size, **Controls** for configurable keys, and **Help** for setup and shortcuts.
 
-Penguin is a Windows x64 controller and mod for **Lunar Client, Minecraft 1.21.11, Fabric and Fabric API**. Load or stop it while Minecraft stays open.
+## Everyday controls
 
-## Download
+| Key | Action |
+| --- | --- |
+| **K** | Open Penguin |
+| **J** | Toggle all player nametags and tracers, including friends |
+| **O / P** | Toggle block outlines / block tracer lines |
+| **U** | Toggle Stone View |
+| **F8** | Stop clickers, passive turning and the mining cycle |
+| **Esc** | Go back or close a menu |
 
-**[Download Penguin 1.9.27 for Windows](https://github.com/penguinmodowner/penguin/releases/download/v1.9.27/Penguin-Lunar-1.9.27-Windows.zip)**
+Left Clicker defaults to **]**, Right Clicker to **F7**. Mining-cycle and waypoint-group keys start **Unbound**; choose them in Settings → Controls. Clickers require focused gameplay: enable one, then release and hold its mouse button.
 
-Extract the entire ZIP and keep Penguin.exe, app and runtime together. Java is included.
+## Mining and blocks
 
-For developers, **[Penguin-Lunar-1.9.27-Source.zip](https://github.com/penguinmodowner/penguin/releases/download/v1.9.27/Penguin-Lunar-1.9.27-Source.zip)** contains the buildable Penguin source and tests. GitHub's automatic **Source code** downloads contain this documentation repository, not the application source or ready-to-run program. **[SHA256SUMS.txt](https://github.com/penguinmodowner/penguin/releases/download/v1.9.27/SHA256SUMS.txt)** lists checksums for both release ZIPs.
+**Gen Mining → Cycle:** choose a key, aim at the first unfinished center block and start. Penguin mines four blocks, turns after the first three, then stops with its completion alert. It can continue while tabbed out; input directed at that game or F8 cancels it. Verify, Sell, Alerts and the optional Escape-menu actions have their own sections.
 
-**1.9.27 includes a CosmicUtilities mining correction.** Inherited Utilities overrides could prevent normal left-click mining or switching mining targets. The new **1.5 experimental-r3 compatibility build for Minecraft 1.21.11** restores Minecraft's normal block-start, target-change and right-click-while-mining decisions, and keeps Peaceful Mining within normal reach. The G Focus and saved-settings fixes remain included. Prepare Lunar's Fabric Loader detection fix and Penguin's existing mining-cycle behavior are preserved.
+**Block Tracers:** search block names or IDs, add them to one shared list and choose a color for each type. Outlines and tracer lines toggle independently. Trace all matches or the closest of each type. Only loaded chunks are searched.
 
-**Updating or loading Penguin alone does not update an installed CosmicUtilities JAR.** Fully close Minecraft and Lunar, including the tray icon. Open the new **Penguin 1.9.27 → Prepare Lunar**, select the intended **Fabric 1.21.11** profile and check **CosmicUtilities**. Choose **Use included build** if a local Utilities JAR was selected, review the files, install, then relaunch Lunar. The older Utilities JAR is backed up before replacement.
+Presets add or remove their blocks while preserving unrelated selections: **Ground Zero** includes yellow wool, blue-highlighted black concrete and red-highlighted raw gold blocks; **Vault** uses white concrete. The block inspector identifies what the server sends to your client, including blocks beneath entity decorations.
 
-## First launch and updates
+## Friends, gangs and waypoints
 
-1. Fully close Lunar, including its tray icon, then open Penguin.exe. It enables Lunar's built-in Enable Attach setting and backs up the launcher settings. If needed, close Lunar and choose Prepare Lunar.
-2. Launch Lunar **Fabric 1.21.11** with Fabric API available in the profile.
-3. In Penguin, click Refresh, select the game and choose Load Penguin. Keep Minecraft visible while textures reload.
+**Friends** has individual ON/OFF switches and a shortcut to friend colors and nametags. ON applies friend visuals and excludes that player from Aim Assist; OFF treats them as a regular player.
 
-Do not install another Penguin copy in the mods folder. Restart Minecraft once when updating; closing only the controller does not clear old loaded code or a previous FAILED initialization.
+**Auto-add from gangs** watches exact gang names. Recognized live tags or a complete `/g info <gang>` / `/g who <gang>` roster add members to your saved Friends list. Saved friends remain after they leave a gang or you stop watching it. Individual OFF switches stay respected. Use OFF to exclude someone: removing them can let an enabled gang watch add them again.
 
-Use the current version in every game window sharing a settings folder. Existing settings are preserved. Versions before 1.9.22 cannot read the current shared settings format 6 after it is saved.
+**Visuals → Waypoint Groups** shows or hides the members of one Lunar group, such as `vaults`, without changing other groups. Lunar's Waypoints mod must be on. Lunar saves these visibility changes, even after Stop Penguin.
 
-**Prepare Lunar** also opens an optional-mod chooser, with every checkbox initially unchecked. Select the intended Lunar profile, choose companion mods, then review the files before installing. CosmicPings and CosmicTextures use compatible official Modrinth releases; required dependencies are checked and downloaded when needed. Fully close Lunar before installing; these mods load on the next launch. Existing selected mods are backed up before replacement. Unchecked and unrelated mods stay in place.
+## Clue scrolls
 
-Checking **CosmicUtilities by Minecoin** uses the included **1.5 experimental-r3 compatibility build for Minecraft 1.21.11** by default. It corrects the mining overrides and retains the fixes for the offscreen G Focus marker crash and saved cooldown settings. It is an unofficial compatibility port, not an official Minecoin release. **Choose Utilities JAR…** remains available for a compatible Minecoin build you already have; **Use included build** restores the bundled choice. Penguin does not port an arbitrary 1.21.8 JAR automatically.
+Enable Clue Scrolls and open a storage chest:
 
-CosmicUtilities keeps Minecoin's original attribution and **All Rights Reserved** license. Penguin's MIT license does not apply to it. The included **THIRD-PARTY-NOTICES.txt** identifies the exact build and its terms. Earlier builds passed startup and G Focus checks; the new mining correction still needs a live retest on the affected friend's computer. Not every CosmicUtilities feature has been tested in game.
+- **Sort** organizes recognized clues inside the chest.
+- **Collect** uses the clue in **hotbar slot 1** as a reference. Similar matching groups market-price amounts and normal/deepslate forms of the same ore; lapis and redstone remain separate.
+- **Dump** stores recognized unfinished inventory clues. Completed and unknown scrolls remain in your inventory.
 
-## Menu organization
+Collect and Dump shift-click one stack at a time and pace transfers for the connection. After successful collection, a matching unfinished scroll in **hotbar slot 2** moves to the first free upper-inventory slot; the reference stays in slot 1. Remove the old standalone ClueSort and avoid running two inventory automation tools together.
 
-**All** shows every module. **General** contains Message Alerts; **Combat** groups the clickers and Aim Assist; **Mining** contains Gen Mining and Block Tracers; **Visuals** contains player overlays and visual controls; **Clues** contains Clue Scrolls. **Friends, Profiles and Settings** are separate utility pages.
+## Settings and alerts
 
-Search checks all modules, including those outside the current category. Clear it with the × button, or choose a category to clear the search and browse that category. Module ON/OFF controls sit in the settings-panel header where applicable; Gen Mining keeps individual feature switches.
+Preferences save automatically and sync between games sharing a settings folder. Use the same Penguin version in those games. Running cycles and menu navigation remain local.
 
-Settings are split into smaller sections:
+**Profiles → Export file** saves a shareable settings file. Friends and gangs are excluded unless selected. To import, copy a file into the profiles folder, Refresh, inspect it and Apply profile. Penguin backs up current settings and leaves automatic actions off until enabled. Raid Watch connection settings are local and are not exported.
 
-- **Gen Mining:** Verify, Auto-sell, Alerts, Actions.
-- **Aim Assist:** Aim, Targets, Advanced.
-- **Nametags and Friend Overlay:** Display, Style.
-- **Block Tracers:** Display, Presets.
+Message Alerts work independently of Gen Mining. Mining Alerts links to the same sounds available under Gen Mining. Raid Watch can monitor a cell and optionally write to an existing local PenguinTracker Discord-bot relay; it does not create the bot or require its token. A local relay write does not confirm Discord delivery.
 
-Reopening the menu restores the category, module, search, scroll positions and each module's selected section for that game session. Navigation stays local to each game and is not exported or synced. Back from a nested page preserves the parent view; explicit Friend Overlay links open that page directly.
+## Optional companion setup
 
-**General > Message Alerts** has its own enabled switch, volume and Test button. Incoming private-message alerts work with Gen Mining and its mining cycle disabled. Your existing message-alert settings are preserved.
+Prepare Lunar offers **MrMexican 1.3.2** and optional **CosmicTextures 1.2**, both initially unchecked. Penguin works without them. Fully close Minecraft and Lunar before selecting a profile, reviewing changes and installing companions.
 
-## Mining: Gen Mining and Block Tracers
+MrMexican setup backs up superseded CosmicUtilities, CosmicPings and old Penguin mod copies. CosmicTextures is kept or installed only when included in this setup; unrelated Lunar mods remain. Backups go into the profile's `penguin-mod-backups` folder. Updating Penguin alone does not replace companion mods.
 
-Open **K > Mining**. **Gen Mining** contains verification, auto-sell and all mining alerts, with independent switches, delays and volume controls. **Block Tracers** contains the shared block list for outlines and tracer lines.
+Official downloads are pinned by hash. Setup disables MrMexican's automatic updater, automatic Papa Ping and Peaceful Mining; including CosmicTextures also disables its overlapping texture packs. Manually using `/papa` → Create still contacts its external authentication service. Do not share that service's relay token. Third-party mods retain their own authorship and licenses; see [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt).
 
-**Choose a mining-circle toggle in Settings; it defaults to Unbound.** During focused gameplay, aim at the first shattercube center block and press your chosen toggle. Penguin holds mining until plain prismarine marks completion, releases mining while smoothly turning right 90 degrees, then holds mining on the next center block. Each turn takes a variable **1.6–2.1 seconds in foreground gameplay**, with a gradual start and gentle stop; background timing can vary with game tick rate. After the fourth distinct finished block it releases mining and stops without a fourth turn. Blocks crossed during a turn do not advance the cycle.
+## Stop, update and source
 
-Each new or resumed block now receives a normal attack press before held mining continues. This fixes the case where the pickaxe swung but the block did not mine, including restarting on the same block and resuming after verification. Turning, verification waits and cancellation release the cycle's mining input.
+**Stop Penguin** in the launcher disables its runtime features while Minecraft stays open. Loaded Java code remains until Minecraft closes, so restart the game before loading an update. Companion changes also take effect on the next game launch.
 
-**Mining > Gen Mining > Alerts > Cycle finished** plays a sound once after the fourth distinct block finishes. It defaults **ON at 100%**, with its own toggle, **0–200% volume** and **Test** button. It works in the background, independently of verification and other alerts. Cancelling or interrupting a cycle does not play this completion sound.
+The bundled `README.txt` contains more detailed feature instructions. This release passed **649 automated tests, with one skipped**. In-game checks confirmed the new menu, clue-scroll changes and vaults-only waypoint toggling. The gang parser was checked against live server tags; final friend-list/nametag confirmation and live Raid Watch relay validation remain pending.
 
-**Manual key or mouse-button presses, mouse movement or scrolling directed to that game stop its cycle and release its mining input.** The initial toggle press, held-toggle repeats and releases alone do not cancel it. Manually opening a game menu also stops it. The circle does not require either passive control below.
-
-**Mining can continue while tabbed out.** Switching apps or game instances does not cancel the cycle; app-switch gestures such as Alt+Tab are exceptions to input cancellation. Start a cycle separately in each game window. Each runs independently, and input sent to another window does not stop it.
-
-**Verification during a cycle:** with **Mining > Gen Mining > Verify** enabled, a server verification prompt pauses mining and turning. Penguin waits for the server to confirm successful verification before resuming the same cycle position and finished-block count. Sending the verification command alone does not resume mining. Automatic resume requires Verify to remain enabled. A blocked command, a 45-second timeout or manual cancellation stops the cycle instead.
-
-The existing controls under **Mining > Gen Mining > Actions** remain separate. **Tab in at** chooses **Not at all** (default), **Sea lantern**, **Prismarine** or **After 4 blocks**. The block choices close Minecraft's Escape pause menu when you aim at that type; **After 4 blocks** waits for the passive sequence below. Sea lantern is the early warning at **50 remaining**; prismarine means the center block is **finished**. This does not change which Windows app is in front. The selected action is independent of alarm switches and volumes.
-
-**Turn 90 degrees at prismarine** is a separate switch, **OFF by default**. It uses the same slower turn, taking a variable **1.6–2.1 seconds in foreground gameplay** with a gradual start and gentle stop, preserving pitch. Blocks crossed during the turn do not trigger alerts or another action; observation resumes after the turn settles. The action is independent of alarm sound. Outside the four-block cycle, look away for one second before it can turn again.
-
-The shattercube warning stages are sea lantern at **50**, dark prismarine at **25**, and prismarine bricks at **10** remaining. Only **plain prismarine** counts as finished.
-
-For the passive Escape-menu sequence, choose **Tab in at: After 4 blocks** and enable **Turn 90 degrees at prismarine**. These controls do not hold mining. The first three prismarine completions turn right 90 degrees; the fourth closes Escape without another turn. Only distinct positions while Escape is open count; revisits are ignored. A new prismarine position can count after the turn settles without a look-away delay. Closing the menu manually, changing the tab-in choice, turning the switch off, or changing worlds resets the count. Both passive and mining-circle progress stay local to that game.
-
-Search block names or registry IDs, add types to the list, or show only selected types. Each selected type has its own color editor with **Red, Green and Blue sliders**, a preview and reset. Selected rows now have a clearer background and accent. Changes save automatically.
-
-Outlines and tracer lines always use that same block list and the same per-type colors. Their switches are independent. **O toggles outlines; P toggles tracers.** Turning either on also enables Block Tracers. They operate during gameplay, not while typing in menus.
-
-**Closest of each type** draws one line to the nearest valid discovered match of every selected type. **All** traces all retained matches. Radius and line width are adjustable. Offscreen and behind targets still receive lines. Only loaded chunks are scanned, using bounded per-type samples; this is not a search of the entire world.
-
-Presets are switches. ON adds the preset's blocks; OFF removes those blocks. Your other selected types and saved colors remain. A preset is ON when all of its types are selected; enabling a partial preset adds the missing types. Presets can overlap, so removing shared types also updates other preset switches.
-
-- **Ground Zero:** yellow wool in yellow, black concrete in blue, and Block of Raw Gold in red. These colors are defaults; your saved custom colors are kept.
-- **Glass, panes & wool:** clear/tinted/colored glass, clear/colored panes, and all wool colors.
-- **Vault:** pale oak logs and wood, including stripped variants.
-
-The horizontal radius goes from **4 to 512 blocks** for any selection, including Ground Zero.
-
-Enabling a preset while Block Tracers is disabled enables its outlines and lines. Otherwise it keeps your display switches and Closest/All choice. Existing Ground Zero and outline settings still migrate into the shared list.
-
-**Identify aimed block:** aim within 8 blocks, then open the inspector from Block Tracers. It displays the client-known ID, with **Copy block ID**, **Add to block list** and **Edit selected block color...** for a selected type. Entity decorations do not obscure the block-only check; a real block in front can still be hit, and a server-only original identity cannot be recovered.
-
-## Clue-scroll timing
-
-Clue Scrolls now allows a **0.05-second minimum delay per move**. Your saved delay stays unchanged until you adjust it; this is not a promise that an entire inventory sorts in 0.05 seconds.
-
-## Other controls and features
-
-- **K:** open Penguin in a world. At the main menu, use Open menu in the controller.
-- **J:** toggle all player nametags/tracers, including friends, preserving their appearance settings.
-- **Mining-circle toggle:** choose it in Settings; Unbound by default. It starts/stops the four-block circle during focused gameplay.
-- **F8:** stop both clickers, aim tracking and the mining circle. Default clicker toggles are ] and F7; change them in Settings.
-- **Stop Penguin:** disable the mod while Minecraft stays open. Closing only the controller does not stop it. Java classes remain loaded until Minecraft exits.
-- Mining > Gen Mining: verification, auto-sell and separate alerts with volume controls.
-- Friend lists with individual on/off switches, custom labels/tracers, guard/NPC filtering and offscreen indicators.
-- Windows clickers and smooth aim assist with target filters and adjustable aim height. Clickers require focused gameplay and a fresh physical release/press after settings or focus changes.
-- Menu scaling from 50–150%, No Debuff, Constant FOV, and clue-scroll sorting/collection.
-- Constant FOV allows normal hold-C zoom while C is physically held during focused gameplay, restoring configured FOV on release. Remapped/toggle zoom is not covered. Server-side effects remain unchanged.
-
-## Profiles and multiple windows
-
-Export/import settings through Profiles. Friend names are optional on export and import. Imports preview the change, create a backup, stop the running mining cycle and leave automation off until enabled, including Gen Mining's passive tab-in and turning actions. Profile formats **1–7** still import; new exports use **format 8** and require **1.9.22**. Per-block colors, line width, Gen Mining controls, the mining-cycle binding and completion-alert settings are included. Older settings and profiles default the new completion alert to ON at 100%.
-
-Updated windows sharing the same config folder sync saved settings, normally within about half a second while ticking. Different folders remain independent. Simultaneous independent changes merge; competing edits to the same setting use the last save. Loading/stopping, selected live targets and running operations remain local. The shared file is config/penguin-live-settings.json.
-
-## Validation
-
-**Penguin 1.9.27 passed 458 automated tests across 52 suites, with no failures or errors.** The Utilities regression check passed all **17 checks**, including eight executable targeting cases, with no unresolved Minecraft references or mixin selectors. G Focus and saved-settings code is byte-identical to r2.
-
-An isolated r2-to-r3 installation check used the actual companion JARs and a real Lunar boot log. It verified the bundled SHA256, kept installed files unchanged during review, backed up duplicate old r2 copies, left CosmicPings, CosmicTextures and Fabric API unchanged, and created no duplicates on repeat installation.
-
-**A live mining retest on the affected friend's computer is still pending.** Automated checks do not establish that their exact in-game problem is resolved.
-
-The preceding **Penguin 1.9.26 passed 456 automated tests across 52 suites**. Its isolated installation check used a real Lunar boot log, preserved installed files during review, backed up the old Utilities JAR and avoided duplicates. The preceding 1.9.24 release passed **429 automated tests across 50 suites**. Live checks confirmed mining start/stop/restart, all four manual cancellation methods, a full background cycle with three turns and one alert, and pause/resume through a real verification prompt.
-
-The earlier CosmicUtilities **experimental-r2** JAR reached Lunar Fabric 1.21.11's main menu without saved-settings errors. G Focus passed an earlier in-game check. Those fixes remain in r3, but the current mining change has not yet been tested in that friend's game. Item-overlay, damage-indicator and HUD checks remain pending.
-
-See the included README.txt for additional features and troubleshooting. [Penguin MIT license](LICENSE); third-party components retain their own terms as described in THIRD-PARTY-NOTICES.txt.
-
+Developers: download **[Penguin-Lunar-1.9.28-Source.zip](https://github.com/penguinmodowner/penguin/releases/download/v1.9.28/Penguin-Lunar-1.9.28-Source.zip)** for the application source and tests. Its `SOURCE-BUILD.txt` explains optional test fixtures. GitHub's automatic **Source code** downloads contain this documentation repository. **[SHA256SUMS.txt](https://github.com/penguinmodowner/penguin/releases/download/v1.9.28/SHA256SUMS.txt)** covers both release ZIPs. [Penguin's MIT license](LICENSE) applies to Penguin code only.
