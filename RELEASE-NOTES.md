@@ -1,45 +1,29 @@
-# Penguin 1.9.28 — a clearer menu and easier setup
+# Penguin 1.9.37 — clue tools and guard overlays
 
-**[Download Penguin 1.9.28 for Windows](https://github.com/penguinmodowner/penguin/releases/download/v1.9.28/Penguin-Lunar-1.9.28.zip)**
+Download **[Penguin-Lunar-1.9.37.zip](https://github.com/penguinmodowner/penguin/releases/download/v1.9.37/Penguin-Lunar-1.9.37.zip)** for Windows x64. Extract the entire ZIP and keep `Penguin.exe`, `app` and `runtime` together. Java is included. Requires **Lunar Fabric 1.21.11 and Fabric API**.
 
-Requires Windows x64 and Lunar Fabric **1.21.11** with Fabric API. Extract the entire ZIP; Java is included. Existing settings are preserved. **Restart Minecraft before loading this update**, and use the same Penguin version in windows sharing settings.
+**Restart Minecraft before loading this update.** Existing settings are preserved. Use the same Penguin version in game windows sharing settings.
 
-## A menu that's easier to learn
+## New clue-scroll panel
 
-- A new **Start guide** introduces the controls and links to common tasks.
-- Features are organized into **Mining, Combat, Visuals, Clues and Alerts**, with **All** and global search.
-- Gen Mining now has **Cycle, Verify, Sell, Alerts and Escape** sections. Block Tracers has **Blocks, Display and Presets**.
-- Settings separates **Display, Controls and Help**. Friends, gang watching, profiles and block tools have clearer actions and explanations.
-- The menu still remembers your page, search and scroll position when reopened.
-- The launcher separates first-time **Prepare → Launch → Load** from everyday game controls. It refreshes the game list automatically and requires an explicit choice when several games are open. Opening it alone no longer edits Lunar settings; **Prepare Lunar** does.
+- Enter MrMexican category numbers, then **Take** from the chest or **Put** into it. Custom category numbers, spaces, commas and ranges are supported; no reference scroll is needed.
+- **Ore selection is required by default for ore-mining clues.** Pick one material, such as Redstone: different scroll tiers and required amounts match, while lapis, iron and gold stay put. Normal and deepslate forms share a material; your selected category numbers still apply. **Any ore** explicitly allows mixed materials. Other task types are unaffected.
+- **Take all** and **Dump all** move recognized clue scrolls regardless of numbers or ore. Their **Include completed** switch starts OFF. Number-based Take/Put always exclude completed rewards.
+- Assign separate **Take / Put keyboard shortcuts** in **K → Clues → Clue Scrolls → Controls**. They start unbound and work only in an open chest, without repeating while held or firing while typing or selecting an ore.
+- Transfers use normal shift-clicks in one batch with **no added delay between items**. Server processing can still affect visible timing. Transfers stop when the destination fills or an item changes, briefly check for corrections, and do not automatically retry the batch.
+- The compact panel replaces the previous reference/sorting interface. **More tools has been removed.** Number matching uses compatible **MrMexican 1.3.2**; Take all / Dump all work without it.
 
-## Clue-scroll fixes
+## Guard overlays and cleaner block tracers
 
-- Completed scrolls are protected from Dump and Collect, including the combined **“COMPLETE! Right-click to claim rewards!”** footer, checkmarks and wrapped task text.
-- More unfinished task types are recognized, fixing valid clues being skipped.
-- Dump and Collect shift-click one stack at a time, merge compatible stacks and pace transfers for connection lag. Sort remains a separate chest action.
-- Collect uses **hotbar slot 1** as its reference. On successful completion, a matching unfinished clue in **slot 2** moves to the first empty upper-inventory slot. Completed, unrelated or nonmatching items are left alone; no move is made if there is no space or collection is cancelled.
-- Similar matching groups market-price amounts and normal/deepslate variants of the same ore while keeping lapis and redstone separate.
+- New **Visuals → Guards** section for guard, cell guard, enforcer and warden nametags and tracer lines, with individual type colors, range and style controls.
+- Enabled Guards follow **J** by default, together with player/friend overlays. Turn off **Follow J toggle** to keep them independent; a separate configurable guard shortcut is also available.
+- Guards start OFF on existing installs. These labels identify loaded NPCs and distance; they do not predict detection areas.
+- Removed the **top-left Block Tracers status banner**. Outlines, tracer lines, block lists and presets remain available.
 
-## Friends, waypoints and blocks
+## Setup, validation and source
 
-- **Lunar Waypoint Groups:** show or hide only a selected group's waypoints, with an optional configurable key. Other groups and ungrouped waypoints stay unchanged. Lunar saves the visibility changes.
-- **Saved gang friends:** recognized members of watched gangs are added permanently to Friends. Leaving a gang or stopping its watch does not remove them. Individual OFF switches stay respected across shared settings.
-- Live gang detection now recognizes the server's unquoted team tags as well as supported quoted tags.
-- The **Vault** block preset now selects **white concrete**. Ground Zero and individual block colors remain available.
+Prepare Lunar still offers optional **MrMexican 1.3.2** and **CosmicTextures 1.2**, both unchecked initially. Updating Penguin alone does not replace companions. Fully close Minecraft and Lunar before changing companion mods; see the bundled README and third-party notices.
 
-## Companion setup and alerts
+**723 automated tests passed; one filesystem-link test was skipped.** The latest clue panel, shortcuts, J-linked guard overlays and banner removal still need final in-game checks. Earlier menu and waypoint checks do not validate every new transfer edge case.
 
-Prepare Lunar offers **MrMexican 1.3.2** and optional **CosmicTextures 1.2**, both unchecked by default. It downloads pinned official files, reviews changes before installation, backs up superseded CosmicUtilities/CosmicPings/Penguin copies and preserves unrelated Lunar mods. CosmicTextures is kept or installed when included. The older Utilities port is no longer bundled.
-
-Setup disables MrMexican's updater, automatic Papa Ping and Peaceful Mining. Including CosmicTextures disables overlapping MrMexican texture packs. Fully close Minecraft and Lunar, including its tray icon, before changing companions; loading this Penguin update alone does not replace them.
-
-**Alerts** brings together Message Alerts, Mining Alerts and Raid Watch. Message Alerts remains independent of Gen Mining. Raid Watch supports local cell monitoring and an optional relay to an existing local PenguinTracker Discord bot; no bot token is needed by Penguin.
-
-## Validation and source
-
-**649 automated tests passed; one filesystem-link test was skipped.** In-game checks confirmed the new menu, clue-scroll fixes and vaults-only waypoint toggling. Gang detection passed a read-only check against live tags; the resulting friend-list/nametag behavior still awaits final user confirmation. Live Raid Watch relay delivery and every optional companion combination have not been confirmed.
-
-The attached **Penguin-Lunar-1.9.28-Source.zip** contains the application source and tests, with test-fixture instructions in `SOURCE-BUILD.txt`. GitHub's automatic Source code downloads contain this documentation repository. **SHA256SUMS.txt** covers both release ZIPs.
-
-See `README.txt` for full setup and `THIRD-PARTY-NOTICES.txt` for companion authorship and terms. Penguin's MIT license applies to Penguin code only. Manually creating a `/papa` group can still authenticate your Minecraft identity with its external service.
+**[Penguin-Lunar-1.9.37-Source.zip](https://github.com/penguinmodowner/penguin/releases/download/v1.9.37/Penguin-Lunar-1.9.37-Source.zip)** contains the application source and tests; `SOURCE-BUILD.txt` explains separately obtained test fixtures. GitHub's automatic Source code downloads contain this documentation repository. **SHA256SUMS.txt** covers both release ZIPs.

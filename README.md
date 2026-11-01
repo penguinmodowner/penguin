@@ -1,8 +1,8 @@
 # Penguin for Lunar
 
-**Penguin 1.9.28** brings a clearer menu, a first-use guide and simpler launcher controls, along with clue-scroll fixes, Lunar waypoint-group controls and saved gang friends.
+**Penguin 1.9.37** adds a simpler clue-scroll panel with category numbers, ore selection and Take/Put shortcuts, plus configurable guard nametags and tracers.
 
-**[Download Penguin 1.9.28 for Windows](https://github.com/penguinmodowner/penguin/releases/download/v1.9.28/Penguin-Lunar-1.9.28.zip)** · **[Release notes and downloads](https://github.com/penguinmodowner/penguin/releases/tag/v1.9.28)**
+**[Download Penguin 1.9.37 for Windows](https://github.com/penguinmodowner/penguin/releases/download/v1.9.37/Penguin-Lunar-1.9.37.zip)** · **[Release notes and downloads](https://github.com/penguinmodowner/penguin/releases/tag/v1.9.37)**
 
 Requires **Windows x64, Lunar Client, Minecraft 1.21.11 with Fabric, and Fabric API**. Java is included in the download. Existing Penguin preferences are preserved.
 
@@ -23,8 +23,8 @@ For later sessions, start at step 3. **Restart Minecraft before loading a newer 
 | **Start** | Quick guide, friends, profiles, menu size and shortcut help |
 | **Mining** | Gen Mining and Block Tracers, as separate modules |
 | **Combat** | Left Clicker, Right Clicker and Aim Assist |
-| **Visuals** | Nametags, Friend Overlay, Stone View, No Debuff, Constant FOV and Waypoint Groups |
-| **Clues** | Clue Scrolls guide, matching and transfer options |
+| **Visuals** | Nametags, Friend Overlay, Guards, Stone View, No Debuff, Constant FOV and Waypoint Groups |
+| **Clues** | Clue Scrolls guide and Take/Put shortcut controls |
 | **Alerts** | Message Alerts, Mining Alerts and Raid Watch |
 | **All** | Every feature; search also searches every category |
 
@@ -37,19 +37,19 @@ Select a feature to open its settings. Switches turn things on or off; buttons o
 | Key | Action |
 | --- | --- |
 | **K** | Open Penguin |
-| **J** | Toggle all player nametags and tracers, including friends |
+| **J** | Toggle player/friend overlays and enabled, linked guard overlays |
 | **O / P** | Toggle block outlines / block tracer lines |
 | **U** | Toggle Stone View |
 | **F8** | Stop clickers, passive turning and the mining cycle |
 | **Esc** | Go back or close a menu |
 
-Left Clicker defaults to **]**, Right Clicker to **F7**. Mining-cycle and waypoint-group keys start **Unbound**; choose them in Settings → Controls. Clickers require focused gameplay: enable one, then release and hold its mouse button.
+Left Clicker defaults to **]**, Right Clicker to **F7**. Mining-cycle, waypoint-group and separate guard keys start **Unbound**; choose them in Settings → Controls. Clickers require focused gameplay: enable one, then release and hold its mouse button.
 
 ## Mining and blocks
 
 **Gen Mining → Cycle:** choose a key, aim at the first unfinished center block and start. Penguin mines four blocks, turns after the first three, then stops with its completion alert. It can continue while tabbed out; input directed at that game or F8 cancels it. Verify, Sell, Alerts and the optional Escape-menu actions have their own sections.
 
-**Block Tracers:** search block names or IDs, add them to one shared list and choose a color for each type. Outlines and tracer lines toggle independently. Trace all matches or the closest of each type. Only loaded chunks are searched.
+**Block Tracers:** search block names or IDs, add them to one shared list and choose a color for each type. Outlines and tracer lines toggle independently. Trace all matches or the closest of each type. Only loaded chunks are searched. The top-left Block Tracers status banner has been removed.
 
 Presets add or remove their blocks while preserving unrelated selections: **Ground Zero** includes yellow wool, blue-highlighted black concrete and red-highlighted raw gold blocks; **Vault** uses white concrete. The block inspector identifies what the server sends to your client, including blocks beneath entity decorations.
 
@@ -63,13 +63,19 @@ Presets add or remove their blocks while preserving unrelated selections: **Grou
 
 ## Clue scrolls
 
-Enable Clue Scrolls and open a storage chest:
+Enable **Clue Scrolls** and open a storage chest. Enter MrMexican category numbers such as `4, 12, 17`, then **Take** from the chest or **Put** into it. Spaces and ranges work too. No reference scroll is needed. **From chest** fills the number list without moving anything.
 
-- **Sort** organizes recognized clues inside the chest.
-- **Collect** uses the clue in **hotbar slot 1** as a reference. Similar matching groups market-price amounts and normal/deepslate forms of the same ore; lapis and redstone remain separate.
-- **Dump** stores recognized unfinished inventory clues. Completed and unknown scrolls remain in your inventory.
+For ore-mining clues, use **Ore** in the panel. It starts at **Choose ore…**, so mining clues stay put until one material is selected. **Redstone**, for example, accepts redstone tasks across tiers and required amounts while leaving lapis, iron and gold alone. Normal/deepslate forms share a material; selected category numbers still apply. **Any ore** opts into mixed materials. Non-ore tasks are unaffected.
 
-Collect and Dump shift-click one stack at a time and pace transfers for the connection. After successful collection, a matching unfinished scroll in **hotbar slot 2** moves to the first free upper-inventory slot; the reference stays in slot 1. Remove the old standalone ClueSort and avoid running two inventory automation tools together.
+**Take all / Dump all** ignore the number and ore filters and move only recognized clue scrolls. **Include completed** starts OFF and applies to these two bulk buttons. Number-based Take/Put always skip completed rewards. Bulk actions work without MrMexican; number matching requires compatible **MrMexican 1.3.2** and respects its customized numbers.
+
+Set separate **Take / Put** keyboard shortcuts in **K → Clues → Clue Scrolls → Controls**. Both start unbound. They use the panel's selected numbers and ore, act only in an open chest, and do not fire while typing, choosing ore or holding the shortcut down.
+
+All four actions send normal shift-clicks in one batch without added per-item delay. Server processing can still affect timing. Leave the inventory alone until the result appears; Penguin checks for corrections and does not automatically retry. The panel expands from **Clue tools** on narrow windows. **More tools** and the older sorting/reference interface have been removed. Remove standalone ClueSort and avoid running two inventory automation tools together.
+
+## Guards
+
+Enable **K → Visuals → Guards** for separate guard, cell guard, enforcer and warden nametags/tracers. Choose type colors, visible types, range and style. Guards start OFF on existing installs. **Follow J toggle** starts ON: J hides and restores enabled Guards together with player/friend overlays. Turn it off for independent operation, or assign a separate guard shortcut. These overlays label loaded NPCs and distance; they do not estimate a guard's detection area.
 
 ## Settings and alerts
 
@@ -91,6 +97,6 @@ Official downloads are pinned by hash. Setup disables MrMexican's automatic upda
 
 **Stop Penguin** in the launcher disables its runtime features while Minecraft stays open. Loaded Java code remains until Minecraft closes, so restart the game before loading an update. Companion changes also take effect on the next game launch.
 
-The bundled `README.txt` contains more detailed feature instructions. This release passed **649 automated tests, with one skipped**. In-game checks confirmed the new menu, clue-scroll changes and vaults-only waypoint toggling. The gang parser was checked against live server tags; final friend-list/nametag confirmation and live Raid Watch relay validation remain pending.
+The bundled `README.txt` contains more detailed feature instructions. This release passed **723 automated tests, with one skipped**. The latest clue panel and shortcuts, default guard link to J and removed status banner still need final in-game checks. Earlier menu and vaults-only waypoint checks passed. Final gang friend-list/nametag confirmation and live Raid Watch relay validation remain pending.
 
-Developers: download **[Penguin-Lunar-1.9.28-Source.zip](https://github.com/penguinmodowner/penguin/releases/download/v1.9.28/Penguin-Lunar-1.9.28-Source.zip)** for the application source and tests. Its `SOURCE-BUILD.txt` explains optional test fixtures. GitHub's automatic **Source code** downloads contain this documentation repository. **[SHA256SUMS.txt](https://github.com/penguinmodowner/penguin/releases/download/v1.9.28/SHA256SUMS.txt)** covers both release ZIPs. [Penguin's MIT license](LICENSE) applies to Penguin code only.
+Developers: download **[Penguin-Lunar-1.9.37-Source.zip](https://github.com/penguinmodowner/penguin/releases/download/v1.9.37/Penguin-Lunar-1.9.37-Source.zip)** for the application source and tests. Its `SOURCE-BUILD.txt` explains optional test fixtures. GitHub's automatic **Source code** downloads contain this documentation repository. **[SHA256SUMS.txt](https://github.com/penguinmodowner/penguin/releases/download/v1.9.37/SHA256SUMS.txt)** covers both release ZIPs. [Penguin's MIT license](LICENSE) applies to Penguin code only.
