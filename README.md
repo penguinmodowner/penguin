@@ -1,8 +1,8 @@
 # Penguin for Lunar
 
-**Penguin 1.9.37** adds a simpler clue-scroll panel with category numbers, ore selection and Take/Put shortcuts, plus configurable guard nametags and tracers.
+**Penguin 1.9.39** adds live chest clue counts, a temporary hide button and a simpler six-material ore list.
 
-**[Download Penguin 1.9.37 for Windows](https://github.com/penguinmodowner/penguin/releases/download/v1.9.37/Penguin-Lunar-1.9.37.zip)** · **[Release notes and downloads](https://github.com/penguinmodowner/penguin/releases/tag/v1.9.37)**
+**[Download Penguin 1.9.39 for Windows](https://github.com/penguinmodowner/penguin/releases/download/v1.9.39/Penguin-Lunar-1.9.39.zip)** · **[Release notes and downloads](https://github.com/penguinmodowner/penguin/releases/tag/v1.9.39)**
 
 Requires **Windows x64, Lunar Client, Minecraft 1.21.11 with Fabric, and Fabric API**. Java is included in the download. Existing Penguin preferences are preserved.
 
@@ -65,7 +65,11 @@ Presets add or remove their blocks while preserving unrelated selections: **Grou
 
 Enable **Clue Scrolls** and open a storage chest. Enter MrMexican category numbers such as `4, 12, 17`, then **Take** from the chest or **Put** into it. Spaces and ranges work too. No reference scroll is needed. **From chest** fills the number list without moving anything.
 
-For ore-mining clues, use **Ore** in the panel. It starts at **Choose ore…**, so mining clues stay put until one material is selected. **Redstone**, for example, accepts redstone tasks across tiers and required amounts while leaving lapis, iron and gold alone. Normal/deepslate forms share a material; selected category numbers still apply. **Any ore** opts into mixed materials. Non-ore tasks are unaffected.
+The **CHEST CLUES** sidebar on the right lists the quantity of each numbered clue in the chest, sorted by number. It updates as contents change and combines tiers, materials and stacked quantities, independently of your transfer filters. It excludes player inventory, completed rewards and unnumbered items. Scroll or use the arrow buttons for long lists. Counts use compatible **MrMexican 1.3.2** and its customized category numbers.
+
+Click **x** on the clue tools panel to hide the tools and counts for this chest opening. Reopening a chest restores them automatically; saved settings and the enabled switch stay unchanged. Take/Put shortcuts are inactive while hidden.
+
+For ore-mining clues, use **Ore** in the panel. It starts at **Choose ore…**, so mining clues stay put until one material is selected. **Redstone**, for example, accepts redstone tasks across tiers and required amounts while leaving lapis, iron and gold alone. Normal/deepslate forms share a material; selected category numbers still apply. **Any ore** opts into mixed materials. Non-ore tasks are unaffected. Material choices are **Iron, Lapis, Redstone, Gold, Diamond, Emerald**, in that order; **Choose ore…** and **Any ore** are separate controls below them. Saved selections for removed materials return to **Choose ore…**.
 
 **Take all / Dump all** ignore the number and ore filters and move only recognized clue scrolls. **Include completed** starts OFF and applies to these two bulk buttons. Number-based Take/Put always skip completed rewards. Bulk actions work without MrMexican; number matching requires compatible **MrMexican 1.3.2** and respects its customized numbers.
 
@@ -97,6 +101,6 @@ Official downloads are pinned by hash. Setup disables MrMexican's automatic upda
 
 **Stop Penguin** in the launcher disables its runtime features while Minecraft stays open. Loaded Java code remains until Minecraft closes, so restart the game before loading an update. Companion changes also take effect on the next game launch.
 
-The bundled `README.txt` contains more detailed feature instructions. This release passed **723 automated tests, with one skipped**. The latest clue panel and shortcuts, default guard link to J and removed status banner still need final in-game checks. Earlier menu and vaults-only waypoint checks passed. Final gang friend-list/nametag confirmation and live Raid Watch relay validation remain pending.
+The bundled `README.txt` contains more detailed feature instructions. This release passed **727 automated tests, with one skipped**, and loaded successfully in Lunar 1.21.11. The new chest sidebar layout and temporary hide interaction still await a live chest check. Earlier menu and vaults-only waypoint checks passed. Final gang friend-list/nametag confirmation and live Raid Watch relay validation remain pending.
 
-Developers: download **[Penguin-Lunar-1.9.37-Source.zip](https://github.com/penguinmodowner/penguin/releases/download/v1.9.37/Penguin-Lunar-1.9.37-Source.zip)** for the application source and tests. Its `SOURCE-BUILD.txt` explains optional test fixtures. GitHub's automatic **Source code** downloads contain this documentation repository. **[SHA256SUMS.txt](https://github.com/penguinmodowner/penguin/releases/download/v1.9.37/SHA256SUMS.txt)** covers both release ZIPs. [Penguin's MIT license](LICENSE) applies to Penguin code only.
+Developers: download **[Penguin-Lunar-1.9.39-Source.zip](https://github.com/penguinmodowner/penguin/releases/download/v1.9.39/Penguin-Lunar-1.9.39-Source.zip)** for the application source and tests. Its `SOURCE-BUILD.txt` explains optional test fixtures. GitHub's automatic **Source code** downloads contain this documentation repository. **[SHA256SUMS.txt](https://github.com/penguinmodowner/penguin/releases/download/v1.9.39/SHA256SUMS.txt)** covers both release ZIPs. [Penguin's MIT license](LICENSE) applies to Penguin code only.
