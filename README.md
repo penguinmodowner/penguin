@@ -1,8 +1,8 @@
 # Penguin for Lunar
 
-**Penguin 1.9.43** adds optional remembered terrain through Bobby and Elite Bandit nametags/tracers.
+**Penguin 1.9.47** adds Escapee Radar, quantity-sorted clue counts, a Clue Scrolls toggle shortcut, and first-use defaults with every feature off.
 
-**[Download Penguin 1.9.43 for Windows](https://github.com/penguinmodowner/penguin/releases/download/v1.9.43/Penguin-Lunar-1.9.43.zip)** · **[Release notes and downloads](https://github.com/penguinmodowner/penguin/releases/tag/v1.9.43)**
+**[Download Penguin 1.9.47 for Windows](https://github.com/penguinmodowner/penguin/releases/download/v1.9.47/Penguin-Lunar-1.9.47.zip)** · **[Release notes and downloads](https://github.com/penguinmodowner/penguin/releases/tag/v1.9.47)**
 
 Requires **Windows x64, Lunar Client, Minecraft 1.21.11 with Fabric, and Fabric API**. Java is included in the download. Existing Penguin preferences are preserved.
 
@@ -16,6 +16,12 @@ Requires **Windows x64, Lunar Client, Minecraft 1.21.11 with Fabric, and Fabric 
 
 For later sessions, start at step 3. **Restart Minecraft before loading a newer Penguin version.** Opening Penguin alone does not change Lunar settings; Prepare Lunar does. Do not also install a Penguin JAR in the mods folder.
 
+## First-time settings
+
+All Penguin features and tracer lines start **OFF** only when this game folder has **no saved Penguin settings**. Curated colors, ranges, speeds and volumes are ready for the features you choose to enable. Child preferences are separate from the module's OFF switch. Friends, gangs, private shortcuts, clue selections and relay details are not bundled.
+
+**Updating never applies this preset to an existing setup.** Current shared settings and older settings files keep their saved switches, tuning, lists and keys. Loading displays a local **Penguin mod — press K for settings** message once you join a world; it uses your rebound menu key if different and is not sent to the server.
+
 ## Find your features
 
 | Tab | What's inside |
@@ -24,6 +30,7 @@ For later sessions, start at step 3. **Restart Minecraft before loading a newer 
 | **Mining** | Gen Mining and Block Tracers, as separate modules |
 | **Combat** | Left Clicker, Right Clicker and Aim Assist |
 | **Visuals** | Nametags, Friend Overlay, Guards, Stone View, No Debuff, Constant FOV, Clear Distance Fog and Waypoint Groups |
+| **Bandits** | Escapee Radar highlights, direction and alerts |
 | **Clues** | Clue Scrolls guide and Take/Put shortcut controls |
 | **Alerts** | Message Alerts, Mining Alerts and Raid Watch |
 | **All** | Every feature; search also searches every category |
@@ -47,7 +54,7 @@ Left Clicker defaults to **]**, Right Clicker to **F7**. Mining-cycle, waypoint-
 
 ## Mining and blocks
 
-**Gen Mining → Cycle:** choose a key, aim at the first unfinished center block and start. Penguin mines four blocks, turns after the first three, then stops with its completion alert. It can continue while tabbed out; input directed at that game or F8 cancels it. Verify, Sell, Alerts and the optional Escape-menu actions have their own sections.
+**Gen Mining → Cycle:** choose a key, aim at the first unfinished center block and start. Penguin mines four blocks, turns after the first three, then stops, with a completion alert if enabled. It can continue while tabbed out; input directed at that game or F8 cancels it. Verify, Sell, Alerts and the optional Escape-menu actions have their own sections.
 
 **Block Tracers:** search block names or IDs, add them to one shared list and choose a color for each type. Outlines and tracer lines toggle independently. Trace all matches or the closest of each type. Only loaded chunks are searched. The top-left Block Tracers status banner has been removed.
 
@@ -65,7 +72,7 @@ Presets add or remove their blocks while preserving unrelated selections: **Grou
 
 Enable **Clue Scrolls** and open a storage chest. Enter MrMexican category numbers such as `4, 12, 17`, then **Take** from the chest or **Put** into it. Spaces and ranges work too. No reference scroll is needed. **From chest** fills the number list without moving anything.
 
-The **CHEST CLUES** sidebar on the right lists the quantity of each numbered clue in the chest, sorted by number. It updates as contents change and combines tiers, materials and stacked quantities, independently of your transfer filters. It excludes player inventory, completed rewards and unnumbered items. Scroll or use the arrow buttons for long lists. Counts use compatible **MrMexican 1.3.2** and its customized category numbers.
+The **CHEST CLUES** sidebar on the right lists the quantity of each numbered clue in the chest, sorted by quantity (highest first), with clue number breaking ties. It updates as contents change and combines tiers, materials and stacked quantities, independently of your transfer filters. It excludes player inventory, completed rewards and unnumbered items. Scroll or use the arrow buttons for long lists. Counts use compatible **MrMexican 1.3.2** and its customized category numbers.
 
 Click **x** on the clue tools panel to hide the tools and counts for this chest opening. Reopening a chest restores them automatically; saved settings and the enabled switch stay unchanged. Take/Put shortcuts are inactive while hidden.
 
@@ -76,6 +83,14 @@ For ore-mining clues, use **Ore** in the panel. It starts at **Choose ore…**, 
 Set separate **Take / Put** keyboard shortcuts in **K → Clues → Clue Scrolls → Controls**. Both start unbound. They use the panel's selected numbers and ore, act only in an open chest, and do not fire while typing, choosing ore or holding the shortcut down.
 
 All four actions send normal shift-clicks in one batch without added per-item delay. Server processing can still affect timing. Leave the inventory alone until the result appears; Penguin checks for corrections and does not automatically retry. The panel expands from **Clue tools** on narrow windows. **More tools** and the older sorting/reference interface have been removed. Remove standalone ClueSort and avoid running two inventory automation tools together.
+
+Assign **Toggle Clue Scrolls** in **K → Clues → Clue Scrolls → Controls**. It starts unbound and works in gameplay or an open chest, even while Clue Scrolls is off. Disabling stops transfers and hides both panels; re-enabling restores them in the same chest. It ignores typing, modifier combinations and held-key repeats.
+
+## Escapee Radar
+
+Enable **K → Bandits → Escapee Radar** for loaded Escapee NPC outlines, a nearest-target label/direction arrow and an **ESCAPEE!** banner. Range, color, highlights, direction, banner and tracer line are separate controls. The feature and tracer line start OFF; the direction arrow is independent of the line and of J. It never moves your camera or extends the server's entity tracking. Live Escapee detection is still awaiting confirmation; automated tests cannot confirm the server's exact label layout.
+
+Block presets preserve your tracer-line choice. Existing users keep their saved choices, including the older combined Escapee direction/line preference.
 
 ## Remembered terrain and Elite Bandits
 
@@ -109,6 +124,6 @@ Official downloads are pinned by hash. Setup disables MrMexican's automatic upda
 
 **Stop Penguin** in the launcher disables its runtime features while Minecraft stays open. Loaded Java code remains until Minecraft closes, so restart the game before loading an update. Companion changes also take effect on the next game launch.
 
-The bundled `README.txt` contains more detailed feature instructions. This release passed **753 automated tests, with one skipped**. The terrain cache was confirmed in Lunar using the exact Bobby version offered here. Installer tests cover independent and combined setup, preserved settings and rollback. Elite Bandit identity matched a live server sample; final overlay rendering still awaits an in-game check. The new chest sidebar layout and temporary hide interaction still await a live chest check. Earlier menu and vaults-only waypoint checks passed. Final gang friend-list/nametag confirmation and live Raid Watch relay validation remain pending.
+The bundled `README.txt` contains more detailed feature instructions. This release passed **782 automated tests, with 1 skipped**. First-install and upgrade checks preserve existing settings; the welcome message and final 1.9.47 still need an in-game check. The terrain cache was confirmed in Lunar using the exact Bobby version offered here. Installer tests cover independent and combined setup, preserved settings and rollback. Elite Bandit identity matched a live server sample; final overlay rendering still awaits an in-game check. The new chest sidebar layout and temporary hide interaction still await a live chest check. Earlier menu and vaults-only waypoint checks passed. Final gang friend-list/nametag confirmation and live Raid Watch relay validation remain pending.
 
-Developers: download **[Penguin-Lunar-1.9.43-Source.zip](https://github.com/penguinmodowner/penguin/releases/download/v1.9.43/Penguin-Lunar-1.9.43-Source.zip)** for the application source and tests. Its `SOURCE-BUILD.txt` explains optional test fixtures. GitHub's automatic **Source code** downloads contain this documentation repository. **[SHA256SUMS.txt](https://github.com/penguinmodowner/penguin/releases/download/v1.9.43/SHA256SUMS.txt)** covers both release ZIPs. [Penguin's MIT license](LICENSE) applies to Penguin code only.
+Developers: download **[Penguin-Lunar-1.9.47-Source.zip](https://github.com/penguinmodowner/penguin/releases/download/v1.9.47/Penguin-Lunar-1.9.47-Source.zip)** for the application source and tests. Its `SOURCE-BUILD.txt` explains optional test fixtures. GitHub's automatic **Source code** downloads contain this documentation repository. **[SHA256SUMS.txt](https://github.com/penguinmodowner/penguin/releases/download/v1.9.47/SHA256SUMS.txt)** covers both release ZIPs. [Penguin's MIT license](LICENSE) applies to Penguin code only.
