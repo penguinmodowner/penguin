@@ -1,8 +1,8 @@
 # Penguin for Lunar
 
-**Penguin 1.9.39** adds live chest clue counts, a temporary hide button and a simpler six-material ore list.
+**Penguin 1.9.43** adds optional remembered terrain through Bobby and Elite Bandit nametags/tracers.
 
-**[Download Penguin 1.9.39 for Windows](https://github.com/penguinmodowner/penguin/releases/download/v1.9.39/Penguin-Lunar-1.9.39.zip)** · **[Release notes and downloads](https://github.com/penguinmodowner/penguin/releases/tag/v1.9.39)**
+**[Download Penguin 1.9.43 for Windows](https://github.com/penguinmodowner/penguin/releases/download/v1.9.43/Penguin-Lunar-1.9.43.zip)** · **[Release notes and downloads](https://github.com/penguinmodowner/penguin/releases/tag/v1.9.43)**
 
 Requires **Windows x64, Lunar Client, Minecraft 1.21.11 with Fabric, and Fabric API**. Java is included in the download. Existing Penguin preferences are preserved.
 
@@ -23,7 +23,7 @@ For later sessions, start at step 3. **Restart Minecraft before loading a newer 
 | **Start** | Quick guide, friends, profiles, menu size and shortcut help |
 | **Mining** | Gen Mining and Block Tracers, as separate modules |
 | **Combat** | Left Clicker, Right Clicker and Aim Assist |
-| **Visuals** | Nametags, Friend Overlay, Guards, Stone View, No Debuff, Constant FOV and Waypoint Groups |
+| **Visuals** | Nametags, Friend Overlay, Guards, Stone View, No Debuff, Constant FOV, Clear Distance Fog and Waypoint Groups |
 | **Clues** | Clue Scrolls guide and Take/Put shortcut controls |
 | **Alerts** | Message Alerts, Mining Alerts and Raid Watch |
 | **All** | Every feature; search also searches every category |
@@ -77,6 +77,14 @@ Set separate **Take / Put** keyboard shortcuts in **K → Clues → Clue Scrolls
 
 All four actions send normal shift-clicks in one batch without added per-item delay. Server processing can still affect timing. Leave the inventory alone until the result appears; Penguin checks for corrections and does not automatically retry. The panel expands from **Clue tools** on narrow windows. **More tools** and the older sorting/reference interface have been removed. Remove standalone ClueSort and avoid running two inventory automation tools together.
 
+## Remembered terrain and Elite Bandits
+
+For farther terrain, fully close Minecraft and Lunar, then open **Prepare Lunar** and select **Bobby — remember terrain you've visited**. Review and install into the intended Fabric 1.21.11 profile. Bobby works independently of MrMexican and starts unchecked. Relaunch, set Minecraft's video render distance to around **16 chunks**, and explore. Previously visited terrain stays visible farther away; unseen terrain and live distant entities are not supplied. Existing Bobby settings and cache are kept. New installs get multiple-world matching and a seven-day unused-region expiry. Penguin block tools use live chunks only.
+
+For Elite Bandits, enable **K → Visuals → Nametags → Display → Include elite bandits**. It starts off and shares the normal nametag/tracer settings and **J** toggle. NPC labels are recognized without hardcoding generated account suffixes; floating text decorations are excluded. Aim Assist targeting is unchanged.
+
+**Clear Distance Fog** is available under Visuals, off by default. It removes the distance fade for already-loaded terrain while keeping environmental fog.
+
 ## Guards
 
 Enable **K → Visuals → Guards** for separate guard, cell guard, enforcer and warden nametags/tracers. Choose type colors, visible types, range and style. Guards start OFF on existing installs. **Follow J toggle** starts ON: J hides and restores enabled Guards together with player/friend overlays. Turn it off for independent operation, or assign a separate guard shortcut. These overlays label loaded NPCs and distance; they do not estimate a guard's detection area.
@@ -91,7 +99,7 @@ Message Alerts work independently of Gen Mining. Mining Alerts links to the same
 
 ## Optional companion setup
 
-Prepare Lunar offers **MrMexican 1.3.2** and optional **CosmicTextures 1.2**, both initially unchecked. Penguin works without them. Fully close Minecraft and Lunar before selecting a profile, reviewing changes and installing companions.
+Prepare Lunar offers **MrMexican 1.3.2**, optional **CosmicTextures 1.2**, and **Bobby 5.2.11.1+mc1.21.11**, all initially unchecked. Bobby can be selected independently; choosing it alone preserves the other mods and their settings. Penguin works without them. Fully close Minecraft and Lunar before selecting a profile, reviewing changes and installing companions.
 
 MrMexican setup backs up superseded CosmicUtilities, CosmicPings and old Penguin mod copies. CosmicTextures is kept or installed only when included in this setup; unrelated Lunar mods remain. Backups go into the profile's `penguin-mod-backups` folder. Updating Penguin alone does not replace companion mods.
 
@@ -101,6 +109,6 @@ Official downloads are pinned by hash. Setup disables MrMexican's automatic upda
 
 **Stop Penguin** in the launcher disables its runtime features while Minecraft stays open. Loaded Java code remains until Minecraft closes, so restart the game before loading an update. Companion changes also take effect on the next game launch.
 
-The bundled `README.txt` contains more detailed feature instructions. This release passed **727 automated tests, with one skipped**, and loaded successfully in Lunar 1.21.11. The new chest sidebar layout and temporary hide interaction still await a live chest check. Earlier menu and vaults-only waypoint checks passed. Final gang friend-list/nametag confirmation and live Raid Watch relay validation remain pending.
+The bundled `README.txt` contains more detailed feature instructions. This release passed **753 automated tests, with one skipped**. The terrain cache was confirmed in Lunar using the exact Bobby version offered here. Installer tests cover independent and combined setup, preserved settings and rollback. Elite Bandit identity matched a live server sample; final overlay rendering still awaits an in-game check. The new chest sidebar layout and temporary hide interaction still await a live chest check. Earlier menu and vaults-only waypoint checks passed. Final gang friend-list/nametag confirmation and live Raid Watch relay validation remain pending.
 
-Developers: download **[Penguin-Lunar-1.9.39-Source.zip](https://github.com/penguinmodowner/penguin/releases/download/v1.9.39/Penguin-Lunar-1.9.39-Source.zip)** for the application source and tests. Its `SOURCE-BUILD.txt` explains optional test fixtures. GitHub's automatic **Source code** downloads contain this documentation repository. **[SHA256SUMS.txt](https://github.com/penguinmodowner/penguin/releases/download/v1.9.39/SHA256SUMS.txt)** covers both release ZIPs. [Penguin's MIT license](LICENSE) applies to Penguin code only.
+Developers: download **[Penguin-Lunar-1.9.43-Source.zip](https://github.com/penguinmodowner/penguin/releases/download/v1.9.43/Penguin-Lunar-1.9.43-Source.zip)** for the application source and tests. Its `SOURCE-BUILD.txt` explains optional test fixtures. GitHub's automatic **Source code** downloads contain this documentation repository. **[SHA256SUMS.txt](https://github.com/penguinmodowner/penguin/releases/download/v1.9.43/SHA256SUMS.txt)** covers both release ZIPs. [Penguin's MIT license](LICENSE) applies to Penguin code only.

@@ -43,3 +43,19 @@ OTHER RUNTIME COMPONENTS
 Fabric API is reused or downloaded separately from official Modrinth releases
 when needed. Its own authorship and license terms apply. Java runtime legal
 notices and notices within other packaged dependencies remain applicable.
+
+BOBBY - OPTIONAL OFFICIAL DOWNLOAD
+Author: johni0702
+Project: https://modrinth.com/mod/bobby
+Source: https://github.com/Johni0702/bobby
+Fabric mod ID: bobby
+Official release: 5.2.11.1+mc1.21.11 (Modrinth version ZwOXWoVI)
+License: GNU LGPL v3; original JAR metadata is LGPL-3.0-or-later.
+Downloaded only when selected in Prepare Lunar; not bundled or modified:
+https://cdn.modrinth.com/data/M08ruV16/versions/ZwOXWoVI/bobby-5.2.11.1%2Bmc1.21.11.jar
+Size: 872033 bytes
+SHA-512:
+4a691e6601936baf0e1e6fdc7b041caba315e66c75b08424c500a1903cb225d822a633ac565337f2f14bccfee851eb0c5ad672a2277c205ea00ca187ae762835
+Bobby and its included dependencies retain their original licenses. Penguin's
+MIT license applies to Penguin code. Prepare Lunar preserves existing Bobby
+settings/cache and creates starter settings only when bobby.conf does not exist.
