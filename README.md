@@ -1,8 +1,8 @@
 # Penguin for Lunar
 
-**Penguin 1.9.47** adds Escapee Radar, quantity-sorted clue counts, a Clue Scrolls toggle shortcut, and first-use defaults with every feature off.
+**Penguin 1.9.52** adds live Penguin updates, chest-width clue panels that follow Minecraft GUI Scale, automatic hiding in player vaults, and Legendary crude-ore mining stages.
 
-**[Download Penguin 1.9.47 for Windows](https://github.com/penguinmodowner/penguin/releases/download/v1.9.47/Penguin-Lunar-1.9.47.zip)** · **[Release notes and downloads](https://github.com/penguinmodowner/penguin/releases/tag/v1.9.47)**
+**[Download Penguin 1.9.52 for Windows](https://github.com/penguinmodowner/penguin/releases/download/v1.9.52/Penguin-Lunar-1.9.52.zip)** · **[Release notes and downloads](https://github.com/penguinmodowner/penguin/releases/tag/v1.9.52)**
 
 Requires **Windows x64, Lunar Client, Minecraft 1.21.11 with Fabric, and Fabric API**. Java is included in the download. Existing Penguin preferences are preserved.
 
@@ -14,7 +14,7 @@ Requires **Windows x64, Lunar Client, Minecraft 1.21.11 with Fabric, and Fabric 
 4. Select the game in Penguin and choose **Load Penguin**. Keep Minecraft visible while resources reload. If you have several games open, select the intended one explicitly.
 5. Press **K** in a world, or use **Open menu** in the launcher. **Start** explains the controls and links to common tasks.
 
-For later sessions, start at step 3. **Restart Minecraft before loading a newer Penguin version.** Opening Penguin alone does not change Lunar settings; Prepare Lunar does. Do not also install a Penguin JAR in the mods folder.
+For later sessions, start at step 3. **Upgrading from 1.9.47 or earlier requires one Minecraft restart.** For compatible newer runtimes, extract the new ZIP into its own folder, close any chest/inventory, and use **Update Penguin** in that new launcher. Keep Minecraft visible during the reload. Update each game separately and keep the same version in games sharing settings. Opening Penguin alone does not change Lunar settings; Prepare Lunar does. Do not also install a Penguin JAR in the mods folder.
 
 ## First-time settings
 
@@ -56,6 +56,8 @@ Left Clicker defaults to **]**, Right Clicker to **F7**. Mining-cycle, waypoint-
 
 **Gen Mining → Cycle:** choose a key, aim at the first unfinished center block and start. Penguin mines four blocks, turns after the first three, then stops, with a completion alert if enabled. It can continue while tabbed out; input directed at that game or F8 cancels it. Verify, Sell, Alerts and the optional Escape-menu actions have their own sections.
 
+Choose **Crude ore → Prismarine / Legendary** in Gen Mining. Legendary uses **Glowstone at 50**, **Nether Bricks at 25**, **Nether Quartz Ore at 10**, and **Netherrack when finished**. Prismarine uses Sea Lantern, Dark Prismarine, Prismarine Bricks and Prismarine respectively. The choice controls cycle completion, 90-degree turns, Escape actions and stage alerts. Only the finished stage advances a generator. Each stage alert has its own switch and volume, and the new 25/10 alerts start off.
+
 **Block Tracers:** search block names or IDs, add them to one shared list and choose a color for each type. Outlines and tracer lines toggle independently. Trace all matches or the closest of each type. Only loaded chunks are searched. The top-left Block Tracers status banner has been removed.
 
 Presets add or remove their blocks while preserving unrelated selections: **Ground Zero** includes yellow wool, blue-highlighted black concrete and red-highlighted raw gold blocks; **Vault** uses white concrete. The block inspector identifies what the server sends to your client, including blocks beneath entity decorations.
@@ -72,7 +74,9 @@ Presets add or remove their blocks while preserving unrelated selections: **Grou
 
 Enable **Clue Scrolls** and open a storage chest. Enter MrMexican category numbers such as `4, 12, 17`, then **Take** from the chest or **Put** into it. Spaces and ranges work too. No reference scroll is needed. **From chest** fills the number list without moving anything.
 
-The **CHEST CLUES** sidebar on the right lists the quantity of each numbered clue in the chest, sorted by quantity (highest first), with clue number breaking ties. It updates as contents change and combines tiers, materials and stacked quantities, independently of your transfer filters. It excludes player inventory, completed rewards and unnumbered items. Scroll or use the arrow buttons for long lists. Counts use compatible **MrMexican 1.3.2** and its customized category numbers.
+The **CHEST CLUES** panel above the chest lists the quantity of each numbered clue in the chest, sorted by quantity (highest first), with clue number breaking ties. It updates as contents change and combines tiers, materials and stacked quantities, independently of your transfer filters. It excludes player inventory, completed rewards and unnumbered items. Both the counts above and tools below use the chest's width at **Minecraft's GUI Scale**. Counts grow vertically before paging. Short windows use the outer margins when needed. Use the arrow buttons for long lists. Item tooltips render above these panels. Counts use compatible **MrMexican 1.3.2** and its customized category numbers.
+
+**Player vaults hide both panels automatically.** This covers `/pv` and `/pv <number>` for any vault number, including MrMexican's selector and page changes. Normal chest tools return after leaving the vault. Clue shortcuts are inactive in vaults.
 
 Click **x** on the clue tools panel to hide the tools and counts for this chest opening. Reopening a chest restores them automatically; saved settings and the enabled switch stay unchanged. Take/Put shortcuts are inactive while hidden.
 
@@ -82,7 +86,7 @@ For ore-mining clues, use **Ore** in the panel. It starts at **Choose ore…**, 
 
 Set separate **Take / Put** keyboard shortcuts in **K → Clues → Clue Scrolls → Controls**. Both start unbound. They use the panel's selected numbers and ore, act only in an open chest, and do not fire while typing, choosing ore or holding the shortcut down.
 
-All four actions send normal shift-clicks in one batch without added per-item delay. Server processing can still affect timing. Leave the inventory alone until the result appears; Penguin checks for corrections and does not automatically retry. The panel expands from **Clue tools** on narrow windows. **More tools** and the older sorting/reference interface have been removed. Remove standalone ClueSort and avoid running two inventory automation tools together.
+All four actions send normal shift-clicks in one batch without added per-item delay. Server processing can still affect timing. Leave the inventory alone until the result appears; Penguin checks for corrections and does not automatically retry. **More tools** and the older sorting/reference interface have been removed. Remove standalone ClueSort and avoid running two inventory automation tools together.
 
 Assign **Toggle Clue Scrolls** in **K → Clues → Clue Scrolls → Controls**. It starts unbound and works in gameplay or an open chest, even while Clue Scrolls is off. Disabling stops transfers and hides both panels; re-enabling restores them in the same chest. It ignores typing, modifier combinations and held-key repeats.
 
@@ -122,8 +126,8 @@ Official downloads are pinned by hash. Setup disables MrMexican's automatic upda
 
 ## Stop, update and source
 
-**Stop Penguin** in the launcher disables its runtime features while Minecraft stays open. Loaded Java code remains until Minecraft closes, so restart the game before loading an update. Companion changes also take effect on the next game launch.
+**Stop Penguin** disables its runtime features while Minecraft stays open. **Update Penguin** replaces a compatible runtime with the version from the new launcher folder. Updates stop running automation and preserve settings. Do not overwrite the active version's folder. A pre-1.9.48 runtime, an incompatible runtime or a previous initialization failure requires a Minecraft restart. Companion changes take effect on the next game launch.
 
-The bundled `README.txt` contains more detailed feature instructions. This release passed **782 automated tests, with 1 skipped**. First-install and upgrade checks preserve existing settings; the welcome message and final 1.9.47 still need an in-game check. The terrain cache was confirmed in Lunar using the exact Bobby version offered here. Installer tests cover independent and combined setup, preserved settings and rollback. Elite Bandit identity matched a live server sample; final overlay rendering still awaits an in-game check. The new chest sidebar layout and temporary hide interaction still await a live chest check. Earlier menu and vaults-only waypoint checks passed. Final gang friend-list/nametag confirmation and live Raid Watch relay validation remain pending.
+The bundled `README.txt` contains more detailed instructions. **821 automated tests passed, with 1 skipped and no failures or errors.** The fixed live-update path was verified from 1.9.50 to 1.9.51 within one running Lunar game. Final 1.9.52 GUI-scale/vault behavior and a full Legendary cycle still need an in-game check. Live Escapee recognition, final gang-friend behavior and Raid Watch relay validation remain pending. The terrain cache and vaults-only waypoint control were previously confirmed in Lunar.
 
-Developers: download **[Penguin-Lunar-1.9.47-Source.zip](https://github.com/penguinmodowner/penguin/releases/download/v1.9.47/Penguin-Lunar-1.9.47-Source.zip)** for the application source and tests. Its `SOURCE-BUILD.txt` explains optional test fixtures. GitHub's automatic **Source code** downloads contain this documentation repository. **[SHA256SUMS.txt](https://github.com/penguinmodowner/penguin/releases/download/v1.9.47/SHA256SUMS.txt)** covers both release ZIPs. [Penguin's MIT license](LICENSE) applies to Penguin code only.
+Developers: download **[Penguin-Lunar-1.9.52-Source.zip](https://github.com/penguinmodowner/penguin/releases/download/v1.9.52/Penguin-Lunar-1.9.52-Source.zip)** for the application source and tests. Its `SOURCE-BUILD.txt` explains optional test fixtures. GitHub's automatic **Source code** downloads contain this documentation repository. **[SHA256SUMS.txt](https://github.com/penguinmodowner/penguin/releases/download/v1.9.52/SHA256SUMS.txt)** covers both release ZIPs. [Penguin's MIT license](LICENSE) applies to Penguin code only.
