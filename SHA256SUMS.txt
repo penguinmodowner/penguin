@@ -1,2 +1,2 @@
-e7535a96e1f7af4e1b4cc4d1b575b5aa7d2a6e785e4ef7495f026fcbdbadc999  Penguin-Lunar-1.9.47.zip
-f7b6661574f8e595e0995a809aecca49c83643fbae8cde94625deb4fa1bd2521  Penguin-Lunar-1.9.47-Source.zip
+fd8abe66bea662caf95c6dd3ed508367456e1fc3cb450fdeedf19db1cb275403  Penguin-Lunar-1.9.52.zip
+f7bd171fbd21afeaae7910bbc1d3de2b6d78ae42445bf71b6c1c8d8d029317f2  Penguin-Lunar-1.9.52-Source.zip
