@@ -1,8 +1,8 @@
 # Penguin for Lunar
 
-**Penguin 1.9.56** adds a PvE Aim Assist mode for CosmicPrisons enemies and compact clue-transfer buttons in player vaults, including the vault-close crash fix. Live updates, remembered terrain, Legendary mining and the existing features remain included.
+**Penguin 1.9.57** adds Blood Banker and Bloody Mary targeting and fixes the aim point on large PvE bosses. Existing setups are preserved.
 
-**[Download Penguin 1.9.56 for Windows](https://github.com/penguinmodowner/penguin/releases/download/v1.9.56/Penguin-Lunar-1.9.56.zip)** · **[Release notes and downloads](https://github.com/penguinmodowner/penguin/releases/tag/v1.9.56)**
+**[Download Penguin 1.9.57 for Windows](https://github.com/penguinmodowner/penguin/releases/download/v1.9.57/Penguin-Lunar-1.9.57.zip)** · **[Release notes and downloads](https://github.com/penguinmodowner/penguin/releases/tag/v1.9.57)**
 
 Requires **Windows x64, Lunar Client, Minecraft 1.21.11 with Fabric, and Fabric API**. Java is included in the download. Existing Penguin preferences are preserved.
 
@@ -106,9 +106,9 @@ For Elite Bandits, enable **K → Visuals → Nametags → Display → Include e
 
 ## Aim Assist: players or PvE
 
-Under **K → Combat → Aim Assist**, turn on **PvE enemies instead of players** to target recognized normal, elite and blood bandits, werewolves and escapees. It starts OFF; turning it off restores player targeting. Listed players, friends, guards, wardens, enforcers, unrelated NPCs and floating text decorations stay excluded from PvE targeting.
+Under **K → Combat → Aim Assist**, turn on **PvE enemies instead of players** to target recognized normal, elite and blood bandits, Blood Bankers, Bloody Mary variants, zombie bosses, werewolves and escapees. It starts OFF; turning it off restores player targeting. Listed players, friends, guards, wardens, enforcers, unrelated NPCs and floating text decorations stay excluded from PvE targeting.
 
-Enable **Aim Assist** and **Left Clicker**, then physically hold left-click. The existing smoothing, range, angle, aim height, visibility and held-weapon settings still apply. The naked/target-sword filter applies only to player mode. The feature changes aim selection, not manual attacks or reach. Generated NPC account suffixes are not hardcoded. Blood-bandit and werewolf label variants have automated coverage but still need live confirmation.
+Enable **Aim Assist** and **Left Clicker**, then physically hold left-click. The existing smoothing, range, angle, aim height, visibility and held-weapon settings still apply. The naked/target-sword filter applies only to player mode. The feature changes aim selection, not manual attacks or reach. Generated NPC account suffixes are not hardcoded. Large PvE bodies use a nearby point inside the hitbox. Ordinary zombies and player-owned summons stay excluded. Bloody Mary Gold was identified in game; live targeting of the large boss still needs confirmation.
 
 ## Guards
 
@@ -134,6 +134,6 @@ Official downloads are pinned by hash. Setup disables MrMexican's automatic upda
 
 **Stop Penguin** disables its runtime features while Minecraft stays open. **Update Penguin** replaces a compatible runtime with the version from the new launcher folder. Updates stop running automation and preserve settings. Do not overwrite the active version's folder. A pre-1.9.48 runtime, an incompatible runtime or a previous initialization failure requires a Minecraft restart. Companion changes take effect on the next game launch.
 
-The bundled `README.txt` contains more detailed instructions. **839 automated tests: 838 passed, 1 skipped, no failures or errors.** A live update from 1.9.55 to 1.9.56 succeeded in the same Lunar process and preserved settings. The vault-transfer fix was confirmed in game. New PvE target variants still need live confirmation. Live Escapee recognition, final gang-friend behavior and Raid Watch relay validation remain pending. The terrain cache and vaults-only waypoint control were previously confirmed in Lunar.
+The bundled `README.txt` contains more detailed instructions. **845 automated tests: 844 passed, 1 skipped, no failures or errors.** A live update from 1.9.56 to 1.9.57 succeeded in the same Lunar process and preserved settings. The vault-transfer fix was confirmed in game. New PvE target variants still need live confirmation. Live Escapee recognition, final gang-friend behavior and Raid Watch relay validation remain pending. The terrain cache and vaults-only waypoint control were previously confirmed in Lunar.
 
-Developers: download **[Penguin-Lunar-1.9.56-Source.zip](https://github.com/penguinmodowner/penguin/releases/download/v1.9.56/Penguin-Lunar-1.9.56-Source.zip)** for the application source and tests. Its `SOURCE-BUILD.txt` explains optional test fixtures. GitHub's automatic **Source code** downloads contain this documentation repository. **[SHA256SUMS.txt](https://github.com/penguinmodowner/penguin/releases/download/v1.9.56/SHA256SUMS.txt)** covers both release ZIPs. [Penguin's MIT license](LICENSE) applies to Penguin code only.
+Developers: download **[Penguin-Lunar-1.9.57-Source.zip](https://github.com/penguinmodowner/penguin/releases/download/v1.9.57/Penguin-Lunar-1.9.57-Source.zip)** for the application source and tests. Its `SOURCE-BUILD.txt` explains optional test fixtures. GitHub's automatic **Source code** downloads contain this documentation repository. **[SHA256SUMS.txt](https://github.com/penguinmodowner/penguin/releases/download/v1.9.57/SHA256SUMS.txt)** covers both release ZIPs. [Penguin's MIT license](LICENSE) applies to Penguin code only.
