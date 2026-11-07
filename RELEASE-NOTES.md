@@ -1,42 +1,30 @@
-# Penguin 1.9.53 — left-side clue controls, live updates and Legendary mining
+Download **[Penguin-Lunar-1.9.56.zip](https://github.com/penguinmodowner/penguin/releases/download/v1.9.56/Penguin-Lunar-1.9.56.zip)** for Windows x64. Extract the entire ZIP and keep `Penguin.exe`, `app` and `runtime` together. Java is included. Requires **Lunar Fabric 1.21.11 and Fabric API**.
 
-Download **[Penguin-Lunar-1.9.53.zip](https://github.com/penguinmodowner/penguin/releases/download/v1.9.53/Penguin-Lunar-1.9.53.zip)** for Windows x64. Extract the entire ZIP and keep `Penguin.exe`, `app` and `runtime` together. Java is included. Requires **Lunar Fabric 1.21.11 and Fabric API**.
+**Existing settings are preserved.** Features start OFF only on a first installation with no saved Penguin settings. The new PvE target mode starts OFF for everyone until enabled.
 
-**Existing settings are preserved.** All features start OFF only on a first installation with no saved Penguin settings.
+## PvE Aim Assist
 
-## Updating Penguin
+In **K → Combat → Aim Assist**, enable **PvE enemies instead of players** to aim at recognized CosmicPrisons normal, elite and blood bandits, werewolves and escapees.
 
-- **Coming from 1.9.47 or earlier? Restart Minecraft once**, then load 1.9.53 from its new launcher. Older builds cannot retire their loaded code safely.
-- With a compatible update-capable version already loaded, extract the new download into its own folder, close any chest or inventory, select the correct game and click **Update Penguin**. Keep Minecraft visible during the resource reload. Do not overwrite the running version's folder.
-- Updating stops active automation and preserves your saved switches, colors, tuning, friends and shortcuts. Start a mining cycle again yourself when ready. Each running game updates separately.
-- This includes the HUD registration fix for repeated updates. The corrected update path was tested from **1.9.50 to 1.9.51 in the same Lunar game process**, without restarting Minecraft.
-- Companion mods and incompatible future changes still need a game restart. A game that reports an earlier initialization failure also needs a restart before retrying.
+- Player and PvE targeting are separate modes. Listed players, friends, guards, wardens, enforcers, unrelated NPCs and floating labels stay excluded in PvE mode.
+- Existing smoothing, aim height, range, maximum angle, visibility and held-weapon choices remain. The naked/target-sword filter applies only to player targeting.
+- Enable **Aim Assist** and **Left Clicker**, then physically hold left-click to activate assistance. This changes aim selection; it does not add attack reach or prevent manual attacks on other entities.
+- NPC detection uses the body's own label and matching identity instead of a fixed generated account suffix. Ordinary ore-name labels need additional NPC evidence.
 
-## Restored left-side clue controls
+## Clue buttons in player vaults
 
-- **CLUE SCROLLS controls are back on the left, with CHEST CLUES above the chest.** The ore selector and Include completed switch use their full labels again. Take/Put and Take all / Dump all have separate, roomy rows. Item tooltips render above the panels so the clue name remains readable.
-- Both panels follow **Minecraft's GUI Scale**. Counts match the chest width and use more vertical rows before paging. The left controls use their own wider panel, with stacked controls in narrow windows. Short windows use the right margin for counts when needed.
-- Counts remain sorted by **quantity, highest first**, with clue number breaking ties. Take/Put, the six-material ore filter, Take all / Dump all, Include completed and configurable shortcuts remain available.
-- Both panels stay hidden in **`/pv` and `/pv <number>` for any vault number**, including MrMexican's vault selector and numbered pages. They return for a regular chest. This also prevents clue shortcuts from operating through the vault overlay.
-- The **x** button still hides both panels only for the current chest opening.
+With **Clue Scrolls** enabled, opening **`/pv` or `/pv <number>`** shows compact **Pull all clues / Dump all clues** buttons at the bottom of the open vault. They transfer recognized clues between that vault and your inventory, following the existing **Include completed** switch. The large number panels remain hidden in vaults, and the vault selector itself has no transfer buttons.
 
-## Legendary crude ore
+Includes the fix for a crash when closing a vault with no focused button. Normal chest controls remain on the left with quantity counts above the chest, following Minecraft GUI Scale.
 
-Choose **Crude ore → Legendary** in Gen Mining. The existing Prismarine option remains available and keeps its default for existing setups.
+## Updating
 
-| Remaining | Prismarine | Legendary |
-| --- | --- | --- |
-| 50 | Sea Lantern | Glowstone |
-| 25 | Dark Prismarine | Nether Bricks |
-| 10 | Prismarine Bricks | Nether Quartz Ore |
-| Finished | Prismarine | Netherrack |
+Extract the new ZIP into its own folder, close any chest/inventory, open the new **Penguin.exe**, select your game and click **Update Penguin**. Keep Minecraft visible while resources reload. Compatible loaded versions update without restarting Minecraft; active automation stops and saved settings remain. Update each running game separately and use the same Penguin version in games sharing settings.
 
-The selected pattern applies to the **four-block mining cycle, smooth 90-degree turns, Escape-menu actions and mining alerts**. Only the finished block triggers the next turn. The intermediate stages do not finish a generator. Alerts for 50, 25, 10 and finished have separate switches and volumes, with the newer 25/10 alerts off by default.
+**Coming from 1.9.47 or earlier, or a failed initialization? Restart Minecraft once** before loading. Companion mod changes also require a restart. Do not overwrite the running version's folder. This release does not install or update Guard Lab or other companions automatically.
 
-## Retained features and checks
+## Checks and source
 
-Escapee Radar, Elite Bandit nametags, Bobby remembered terrain, guard overlays, friends/gangs, waypoint groups and the earlier clue tools remain included. Prepare Lunar still offers optional MrMexican 1.3.2, CosmicTextures 1.2 and Bobby 5.2.11.1+mc1.21.11, initially unchecked. Updating Penguin alone does not replace those companion mods.
+**839 automated tests: 838 passed, 1 skipped, no failures or errors.** The packaged files match the tested build. A live update from **1.9.55 to 1.9.56** succeeded without restarting Lunar and preserved settings. The vault fix was confirmed in game. Enemy recognition tests include a captured Elite Bandit identity; the newly added blood-bandit and werewolf variants still need live confirmation.
 
-**821 automated tests passed, 1 skipped, no failures or errors.** Coverage includes GUI-scale layout, vault commands and transitions, Legendary stages and the four-block cycle, settings preservation, runtime replacement and the real Fabric HUD registry. Penguin 1.9.52 loaded successfully in Lunar. The final 1.9.53 GUI/vault behavior and a full Legendary cycle still await an in-game check. Live Escapee label recognition remains unconfirmed.
-
-**[Penguin-Lunar-1.9.53-Source.zip](https://github.com/penguinmodowner/penguin/releases/download/v1.9.53/Penguin-Lunar-1.9.53-Source.zip)** contains the full application source and tests, with `SOURCE-BUILD.txt` for the separately obtained test fixtures and `HOT-UPDATES.md` for the update architecture. GitHub's automatic Source code downloads contain the documentation repository. **SHA256SUMS.txt** covers both ZIPs. Third-party mods retain their authorship and licenses.
+**[Penguin-Lunar-1.9.56-Source.zip](https://github.com/penguinmodowner/penguin/releases/download/v1.9.56/Penguin-Lunar-1.9.56-Source.zip)** contains the full application source and tests. `SOURCE-BUILD.txt` explains separately obtained test fixtures, and `HOT-UPDATES.md` documents runtime replacement. GitHub's automatic Source code downloads contain the documentation repository. **SHA256SUMS.txt** covers both ZIPs. Third-party mods retain their original authorship and licenses.

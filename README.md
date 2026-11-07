@@ -1,8 +1,8 @@
 # Penguin for Lunar
 
-**Penguin 1.9.53** adds live Penguin updates, restored left-side clue controls and top counts that follow Minecraft GUI Scale, automatic hiding in player vaults, and Legendary crude-ore mining stages.
+**Penguin 1.9.56** adds a PvE Aim Assist mode for CosmicPrisons enemies and compact clue-transfer buttons in player vaults, including the vault-close crash fix. Live updates, remembered terrain, Legendary mining and the existing features remain included.
 
-**[Download Penguin 1.9.53 for Windows](https://github.com/penguinmodowner/penguin/releases/download/v1.9.53/Penguin-Lunar-1.9.53.zip)** · **[Release notes and downloads](https://github.com/penguinmodowner/penguin/releases/tag/v1.9.53)**
+**[Download Penguin 1.9.56 for Windows](https://github.com/penguinmodowner/penguin/releases/download/v1.9.56/Penguin-Lunar-1.9.56.zip)** · **[Release notes and downloads](https://github.com/penguinmodowner/penguin/releases/tag/v1.9.56)**
 
 Requires **Windows x64, Lunar Client, Minecraft 1.21.11 with Fabric, and Fabric API**. Java is included in the download. Existing Penguin preferences are preserved.
 
@@ -76,7 +76,7 @@ Enable **Clue Scrolls** and open a storage chest. Enter MrMexican category numbe
 
 The **CHEST CLUES** panel above the chest lists the quantity of each numbered clue in the chest, sorted by quantity (highest first), with clue number breaking ties. It updates as contents change and combines tiers, materials and stacked quantities, independently of your transfer filters. It excludes player inventory, completed rewards and unnumbered items. Both panels follow **Minecraft's GUI Scale**. The counts above match the chest width and grow vertically before paging. The full clue controls sit on the left with roomy Take/Put and bulk-action rows, the full ore selector and the Include completed switch. Narrow windows stack controls in the left margin. Short windows use the right margin for counts when needed. Use the arrow buttons for long lists. Item tooltips render above these panels. Counts use compatible **MrMexican 1.3.2** and its customized category numbers.
 
-**Player vaults hide both panels automatically.** This covers `/pv` and `/pv <number>` for any vault number, including MrMexican's selector and page changes. Normal chest tools return after leaving the vault. Clue shortcuts are inactive in vaults.
+**Player vaults hide the large panels automatically.** This covers `/pv` and `/pv <number>` for any vault number, including MrMexican's selector and page changes. Once a vault is open, compact **Pull all clues / Dump all clues** buttons at the bottom transfer recognized clues between that vault and your inventory. They follow **Include completed** from the normal chest panel. The selector has no transfer buttons, and number shortcuts stay inactive in vaults. Normal chest tools return after leaving the vault. The vault-close crash is fixed.
 
 Click **x** on the clue tools panel to hide the tools and counts for this chest opening. Reopening a chest restores them automatically; saved settings and the enabled switch stay unchanged. Take/Put shortcuts are inactive while hidden.
 
@@ -100,9 +100,15 @@ Block presets preserve your tracer-line choice. Existing users keep their saved 
 
 For farther terrain, fully close Minecraft and Lunar, then open **Prepare Lunar** and select **Bobby — remember terrain you've visited**. Review and install into the intended Fabric 1.21.11 profile. Bobby works independently of MrMexican and starts unchecked. Relaunch, set Minecraft's video render distance to around **16 chunks**, and explore. Previously visited terrain stays visible farther away; unseen terrain and live distant entities are not supplied. Existing Bobby settings and cache are kept. New installs get multiple-world matching and a seven-day unused-region expiry. Penguin block tools use live chunks only.
 
-For Elite Bandits, enable **K → Visuals → Nametags → Display → Include elite bandits**. It starts off and shares the normal nametag/tracer settings and **J** toggle. NPC labels are recognized without hardcoding generated account suffixes; floating text decorations are excluded. Aim Assist targeting is unchanged.
+For Elite Bandits, enable **K → Visuals → Nametags → Display → Include elite bandits**. It starts off and shares the normal nametag/tracer settings and **J** toggle. NPC labels are recognized without hardcoding generated account suffixes; floating text decorations are excluded. This nametag option is separate from the PvE Aim Assist mode below.
 
 **Clear Distance Fog** is available under Visuals, off by default. It removes the distance fade for already-loaded terrain while keeping environmental fog.
+
+## Aim Assist: players or PvE
+
+Under **K → Combat → Aim Assist**, turn on **PvE enemies instead of players** to target recognized normal, elite and blood bandits, werewolves and escapees. It starts OFF; turning it off restores player targeting. Listed players, friends, guards, wardens, enforcers, unrelated NPCs and floating text decorations stay excluded from PvE targeting.
+
+Enable **Aim Assist** and **Left Clicker**, then physically hold left-click. The existing smoothing, range, angle, aim height, visibility and held-weapon settings still apply. The naked/target-sword filter applies only to player mode. The feature changes aim selection, not manual attacks or reach. Generated NPC account suffixes are not hardcoded. Blood-bandit and werewolf label variants have automated coverage but still need live confirmation.
 
 ## Guards
 
@@ -128,6 +134,6 @@ Official downloads are pinned by hash. Setup disables MrMexican's automatic upda
 
 **Stop Penguin** disables its runtime features while Minecraft stays open. **Update Penguin** replaces a compatible runtime with the version from the new launcher folder. Updates stop running automation and preserve settings. Do not overwrite the active version's folder. A pre-1.9.48 runtime, an incompatible runtime or a previous initialization failure requires a Minecraft restart. Companion changes take effect on the next game launch.
 
-The bundled `README.txt` contains more detailed instructions. **821 automated tests passed, with 1 skipped and no failures or errors.** The fixed live-update path was verified from 1.9.50 to 1.9.51 within one running Lunar game. 1.9.52 loaded successfully in Lunar. Final 1.9.53 GUI-scale/vault behavior and a full Legendary cycle still need an in-game check. Live Escapee recognition, final gang-friend behavior and Raid Watch relay validation remain pending. The terrain cache and vaults-only waypoint control were previously confirmed in Lunar.
+The bundled `README.txt` contains more detailed instructions. **839 automated tests: 838 passed, 1 skipped, no failures or errors.** A live update from 1.9.55 to 1.9.56 succeeded in the same Lunar process and preserved settings. The vault-transfer fix was confirmed in game. New PvE target variants still need live confirmation. Live Escapee recognition, final gang-friend behavior and Raid Watch relay validation remain pending. The terrain cache and vaults-only waypoint control were previously confirmed in Lunar.
 
-Developers: download **[Penguin-Lunar-1.9.53-Source.zip](https://github.com/penguinmodowner/penguin/releases/download/v1.9.53/Penguin-Lunar-1.9.53-Source.zip)** for the application source and tests. Its `SOURCE-BUILD.txt` explains optional test fixtures. GitHub's automatic **Source code** downloads contain this documentation repository. **[SHA256SUMS.txt](https://github.com/penguinmodowner/penguin/releases/download/v1.9.53/SHA256SUMS.txt)** covers both release ZIPs. [Penguin's MIT license](LICENSE) applies to Penguin code only.
+Developers: download **[Penguin-Lunar-1.9.56-Source.zip](https://github.com/penguinmodowner/penguin/releases/download/v1.9.56/Penguin-Lunar-1.9.56-Source.zip)** for the application source and tests. Its `SOURCE-BUILD.txt` explains optional test fixtures. GitHub's automatic **Source code** downloads contain this documentation repository. **[SHA256SUMS.txt](https://github.com/penguinmodowner/penguin/releases/download/v1.9.56/SHA256SUMS.txt)** covers both release ZIPs. [Penguin's MIT license](LICENSE) applies to Penguin code only.
