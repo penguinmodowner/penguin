@@ -1,26 +1,26 @@
-[Download Penguin 1.9.63 for Windows](https://github.com/penguinmodowner/penguin/releases/download/v1.9.63/Penguin-Lunar-1.9.63.zip) · Requires Lunar Fabric 1.21.11 and Fabric API. Java is included.
+[Download Penguin 1.9.65 for Windows](https://github.com/penguinmodowner/penguin/releases/download/v1.9.65/Penguin-Lunar-1.9.65.zip) · Requires Lunar Fabric 1.21.11 and Fabric API. Java is included.
 
-### Mining layer repeat
+### Automatic pickaxe absorption
 
-In **K → Mining → Gen Mining → Cycle**, enable **Move up and repeat**. Start already flying using the server's flight ability, aim at the first generator and press your configured cycle key. Penguin finishes four blocks, rises one block, then repeats at the next layer until no unfinished block is ahead.
+In **K → Mining → Gen Mining → Cycle**, enable **Auto absorb full pickaxe**. It starts OFF for new and existing setups until you enable it. An already-saved selection from 1.9.64 is kept.
 
-- Off by default; existing one-layer behavior remains when disabled.
-- Uses the selected Prismarine or Legendary completion pattern.
-- F8 or manual input cancels it. Blocked ascent, lost flight, changed worlds or interrupted movement stop the run.
-- The completion alert plays once at the end. Existing background mining and verification pause/resume remain available.
+- During a running mining cycle, the server's **Your pickaxe is full of energy!** warning stops mining immediately.
+- Penguin takes an **Absorber** from your inventory and applies it to the held pickaxe using the normal drag-and-drop inventory action.
+- Keep **one inventory slot empty** for extracted energy.
+- Mining resumes on the same block and layer only after the server confirms lower energy, one consumed absorber, and an empty cursor after storing any remainder.
+- Missing absorbers, unexpected inventory changes, or an unconfirmed extraction stop the cycle. Check your inventory before restarting. Inventory clicks are not blindly retried.
+- Works with the existing one-layer and **Move up and repeat** cycles. It does not automate extraction during ordinary manual mining.
 
-### Nametags and saved settings
+### Adjustable pause
 
-- **Visuals → Nametags → Display → Show player nametags** hides labels independently of tracer lines. J remains the master overlay toggle.
-- Overlay positioning now follows the actual rendered view, including zoom.
-- Fixes the settings migration that could make the local 1.9.61 build fall back to old friend/preferences data. Existing saves and exported profiles are preserved; the new layer setting starts off.
+**Pause before absorbing** is directly under the absorber switch. Choose **0–10 seconds**, with a **1-second default**. Mining stays stopped during the pause, before any inventory click. The pause saves with your preferences and settings profiles. Manual input or F8 still cancels the cycle.
 
 ### Updating
 
-Extract the entire Windows ZIP into a new folder, close any chest/inventory, open the new **Penguin.exe**, select your game and click **Update Penguin**. Compatible versions update without restarting Minecraft. Active automation stops during updating; saved settings remain. Use the same version in games sharing settings. Versions 1.9.47 or earlier and failed initializations require a Minecraft restart. Companion mods are not updated by loading Penguin.
+Extract the entire Windows ZIP into a new folder, close any chest/inventory, open **Penguin.exe**, select your game and click **Update Penguin**. Compatible versions update without restarting Minecraft. Running automation stops during the update; saved settings remain. Use the same version in games sharing settings. Versions 1.9.47 or earlier and failed initializations require a Minecraft restart. Companion mods are unchanged by this update.
 
 ### Validation and source
 
-**895 tests passed, one skipped, no failures or errors.** The live update to 1.9.63 succeeded and the layer-repeat behavior was confirmed in game. Tests cover repeated layers, empty-layer completion, cancellation, blocked/lost flight, verification pauses and settings/profile migration.
+**914 tests passed, one skipped, no failures or errors.** The live update preserved settings, and both automatic absorption and the adjustable pause were confirmed in game by the tester. Regression checks cover delayed server responses, interruption, pause timing, and existing settings/profile migration.
 
-[Application source and tests](https://github.com/penguinmodowner/penguin/releases/download/v1.9.63/Penguin-Lunar-1.9.63-Source.zip) are attached separately; GitHub's automatic Source code downloads contain the documentation repository. **SHA256SUMS.txt** covers both ZIPs. Personal settings, friend lists and game logs are not bundled.
+[Application source and tests](https://github.com/penguinmodowner/penguin/releases/download/v1.9.65/Penguin-Lunar-1.9.65-Source.zip) are attached separately. GitHub's automatic Source code downloads contain the documentation repository. **SHA256SUMS.txt** covers both ZIPs. Personal settings, friend lists and game logs are not bundled.

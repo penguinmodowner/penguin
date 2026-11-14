@@ -1,8 +1,8 @@
 # Penguin for Lunar
 
-**Penguin 1.9.63** adds optional mining layer repeat, independent player nametags and corrected zoom positioning, with a saved-settings migration fix.
+**Penguin 1.9.65** adds automatic pickaxe absorption during mining cycles and an adjustable pause before applying an absorber.
 
-**[Download Penguin 1.9.63 for Windows](https://github.com/penguinmodowner/penguin/releases/download/v1.9.63/Penguin-Lunar-1.9.63.zip)** · **[Release notes and downloads](https://github.com/penguinmodowner/penguin/releases/tag/v1.9.63)**
+**[Download Penguin 1.9.65 for Windows](https://github.com/penguinmodowner/penguin/releases/download/v1.9.65/Penguin-Lunar-1.9.65.zip)** · **[Release notes and downloads](https://github.com/penguinmodowner/penguin/releases/tag/v1.9.65)**
 
 Requires **Windows x64, Lunar Client, Minecraft 1.21.11 with Fabric, and Fabric API**. Java is included in the download. Existing Penguin preferences are preserved.
 
@@ -53,6 +53,9 @@ Select a feature to open its settings. Switches turn things on or off; buttons o
 Left Clicker defaults to **]**, Right Clicker to **F7**. Mining-cycle, waypoint-group and separate guard keys start **Unbound**; choose them in Settings → Controls. Clickers require focused gameplay: enable one, then release and hold its mouse button.
 
 ## Mining and blocks
+
+**Gen Mining → Cycle → Auto absorb full pickaxe** pauses an active cycle on the server’s full-energy warning, applies an Absorber from your inventory, and resumes after server confirmation. Keep one inventory slot free. It starts OFF unless you already enabled it in 1.9.64. **Pause before absorbing** ranges from **0–10 seconds** (default **1 second**). Mining stops immediately and waits before any inventory click. Missing absorbers or failed confirmation stop the cycle; check your inventory before restarting.
+
 
 **Move up and repeat** in **Gen Mining → Cycle** starts OFF. Start already flying with the server’s flight ability. After four completed blocks, Penguin rises one block and repeats until no unfinished block is ahead. Manual input or F8 cancels; blocked ascent or lost flight stops the run. The completion alert plays once at the end.
 
@@ -140,6 +143,6 @@ Official downloads are pinned by hash. Setup disables MrMexican's automatic upda
 
 **Stop Penguin** disables its runtime features while Minecraft stays open. **Update Penguin** replaces a compatible runtime with the version from the new launcher folder. Updates stop running automation and preserve settings. Do not overwrite the active version's folder. A pre-1.9.48 runtime, an incompatible runtime or a previous initialization failure requires a Minecraft restart. Companion changes take effect on the next game launch.
 
-The bundled `README.txt` contains more detailed instructions. **896 automated tests: 895 passed, 1 skipped, no failures or errors.** Updating to 1.9.63 succeeded in the running Lunar instance and preserved settings. The layer-repeat cycle was confirmed in game. Earlier live checks remain specific to the features tested; they do not validate every companion combination or server edge case.
+The bundled `README.txt` contains more detailed instructions. **915 automated tests: 914 passed, 1 skipped, no failures or errors.** Updating to 1.9.65 succeeded in the running Lunar instance and preserved settings. Automatic absorption and its adjustable pause were confirmed in game. Earlier live checks remain specific to the features tested; they do not validate every companion combination or server edge case.
 
-Developers: download **[Penguin-Lunar-1.9.63-Source.zip](https://github.com/penguinmodowner/penguin/releases/download/v1.9.63/Penguin-Lunar-1.9.63-Source.zip)** for the application source and tests. Its `SOURCE-BUILD.txt` explains optional test fixtures. GitHub's automatic **Source code** downloads contain this documentation repository. **[SHA256SUMS.txt](https://github.com/penguinmodowner/penguin/releases/download/v1.9.63/SHA256SUMS.txt)** covers both release ZIPs. [Penguin's MIT license](LICENSE) applies to Penguin code only.
+Developers: download **[Penguin-Lunar-1.9.65-Source.zip](https://github.com/penguinmodowner/penguin/releases/download/v1.9.65/Penguin-Lunar-1.9.65-Source.zip)** for the application source and tests. Its `SOURCE-BUILD.txt` explains optional test fixtures. GitHub's automatic **Source code** downloads contain this documentation repository. **[SHA256SUMS.txt](https://github.com/penguinmodowner/penguin/releases/download/v1.9.65/SHA256SUMS.txt)** covers both release ZIPs. [Penguin's MIT license](LICENSE) applies to Penguin code only.
